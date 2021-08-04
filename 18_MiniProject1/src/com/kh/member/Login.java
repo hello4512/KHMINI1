@@ -1,4 +1,4 @@
-package miniproject.member;
+package com.kh.member;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 
 public class Login {
 	private Image bg = new ImageIcon
-            (Login.class.getResource("../../icon/bg.jpg")).getImage();
+            (Login.class.getResource("icon/bg.jpg")).getImage();
 	public Login() {
 		JFrame frame = new JFrame("로그인 화면");
 		frame.setSize(1280,720);
