@@ -27,13 +27,15 @@ public class SignUp extends JFrame{
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
+		panel.setBackground(new Color(246, 246, 246));
 		
 		// 타이틀
 		JLabel title = new JLabel("회원 가입 동의");
 		title.setFont(new Font("맑은 고딕", Font.BOLD, 30));
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setOpaque(true);
-		title.setBackground(Color.orange);
+		title.setForeground(Color.white);
+		title.setBackground(new Color(153, 184, 215));
 		title.setLocation(0, 0);
 		title.setSize(1280, 80);
 		panel.add(title);
@@ -41,6 +43,8 @@ public class SignUp extends JFrame{
 		// 이용약관 동의 체크, 설명
 		JCheckBox agree1 = new JCheckBox(" 이용약관 동의");
 		agree1.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		agree1.setBackground(new Color(246, 246, 246));
+		agree1.setFocusPainted(false);
 		agree1.setLocation(165, 90);
 		agree1.setSize(500, 50);
 		panel.add(agree1);
@@ -56,6 +60,8 @@ public class SignUp extends JFrame{
 		// 개인정보 동의 체크, 설명
 		JCheckBox agree2 = new JCheckBox(" 개인정보 수집 및 이용 동의");
 		agree2.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		agree2.setBackground(new Color(246, 246, 246));
+		agree2.setFocusPainted(false);
 		agree2.setLocation(165, 280);
 		agree2.setSize(500, 50);
 		panel.add(agree2);
@@ -71,15 +77,19 @@ public class SignUp extends JFrame{
 		// 모두 동의 체크
 		JCheckBox allAgree = new JCheckBox(" PC방 이용약관, 개인정보 수집 및 이용에 대해 모두 동의합니다 (선택 개인정보 수집 및 이용 동의 포함)");
 		allAgree.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		allAgree.setBackground(new Color(246, 246, 246));
+		allAgree.setFocusPainted(false);
 		allAgree.setLocation(165, 470);
 		allAgree.setSize(1000, 50);
 		panel.add(allAgree);
 		
 		// 다음 단계 버튼
 		JButton next = new JButton("다음 단계");
-		next.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		next.setBackground(Color.orange);
+		next.setFont(new Font("맑은 고딕", Font.BOLD, 18));
+		next.setForeground(Color.white);
+		next.setBackground(new Color(153, 184, 215));
 		next.setBorderPainted(false);
+		next.setFocusPainted(false);
 		next.setLocation(440, 540);
 		next.setSize(380, 50);
 		panel.add(next);
@@ -100,8 +110,9 @@ public class SignUp extends JFrame{
 		// 이전 화면 버튼
 		JButton prev = new JButton("이전 화면으로");
 		prev.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		prev.setBackground(Color.lightGray);
+		prev.setBackground(new Color(221, 221, 221));
 		prev.setBorderPainted(false);
+		prev.setFocusPainted(false);
 		prev.setLocation(440, 600);
 		prev.setSize(380, 50);
 		panel.add(prev);

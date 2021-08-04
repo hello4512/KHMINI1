@@ -137,7 +137,9 @@ public class MainPage extends JPanel{
 		// 확인 버튼
 		JButton btn = new JButton("확인");
 		btn.setFont(new Font("맑은 고딕", Font.BOLD, 22));
+		btn.setForeground(new Color(70, 24, 90));
 		btn.setBackground(Color.white);
+		btn.setFocusPainted(false);
 		btn.setLocation(860, 570);
 		btn.setSize(150, 70);
 		imageLabel.add(btn);

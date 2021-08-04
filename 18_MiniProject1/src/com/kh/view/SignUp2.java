@@ -25,13 +25,15 @@ public class SignUp2 extends JFrame{
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
+		panel.setBackground(new Color(246, 246, 246));
 		
 		// 타이틀
 		JLabel title = new JLabel("회원 가입");
 		title.setFont(new Font("맑은 고딕", Font.BOLD, 30));
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setOpaque(true);
-		title.setBackground(Color.orange);
+		title.setForeground(Color.white);
+		title.setBackground(new Color(153, 184, 215));
 		title.setLocation(0, 0);
 		title.setSize(1280, 80);
 		panel.add(title);
@@ -48,14 +50,17 @@ public class SignUp2 extends JFrame{
 		inputId.setSize(140, 25);
 		panel.add(inputId);
 		
+		// ** 아이디 중복 확인
 		JButton checkId = new JButton("중복 확인");
 		checkId.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		checkId.setBackground(Color.orange);
+		checkId.setForeground(Color.white);
+		checkId.setBackground(Color.gray);
+		checkId.setBorderPainted(false);
+		checkId.setFocusPainted(false);
 		checkId.setLocation(720, 115);
 		checkId.setSize(100, 24);
 		panel.add(checkId);
 		
-		// **아이디 중복 확인
 		JLabel duplId = new JLabel("");
 		duplId.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		duplId.setLocation(570, 125);
@@ -115,14 +120,17 @@ public class SignUp2 extends JFrame{
 		inputPw2.setSize(140, 25);
 		panel.add(inputPw2);
 		
+		// ** 비밀번호 일치 확인
 		JButton checkPw = new JButton("확인");
 		checkPw.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		checkPw.setBackground(Color.orange);
+		checkPw.setForeground(Color.white);
+		checkPw.setBackground(Color.gray);
+		checkPw.setBorderPainted(false);
+		checkPw.setFocusPainted(false);
 		checkPw.setLocation(720, 255);
 		checkPw.setSize(100, 24);
 		panel.add(checkPw);
 		
-		// **비밀번호 일치 확인
 		JLabel samePw = new JLabel("");
 		samePw.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		samePw.setLocation(570, 265);
@@ -202,14 +210,17 @@ public class SignUp2 extends JFrame{
 		inputNum.setSize(140, 25);
 		panel.add(inputNum);
 		
+		// ** 핸드폰 번호 중복 확인
 		JButton checkNum = new JButton("확인");
 		checkNum.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		checkNum.setBackground(Color.orange);
+		checkNum.setForeground(Color.white);
+		checkNum.setBackground(Color.gray);
+		checkNum.setBorderPainted(false);
+		checkNum.setFocusPainted(false);
 		checkNum.setLocation(720, 415);
 		checkNum.setSize(100, 24);
 		panel.add(checkNum);
 		
-		// **핸드폰 번호 중복 확인
 		JLabel duplNum = new JLabel("");
 		duplNum.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		duplNum.setLocation(570, 425);
@@ -245,11 +256,13 @@ public class SignUp2 extends JFrame{
 		inputEmail.setSize(252, 25);
 		panel.add(inputEmail);
 		
-		// 완료 버튼 (버튼 클릭이벤트 -> 아이디, 비밀번호, 폰번호 조건 일치하면 데이터 입력 후 로그인 화면으로 돌아감)
+		// 완료 버튼
 		JButton finish = new JButton("회원가입 완료");
-		finish.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		finish.setBackground(Color.orange);
+		finish.setFont(new Font("맑은 고딕", Font.BOLD, 18));
+		finish.setForeground(Color.white);
+		finish.setBackground(new Color(153, 184, 215));
 		finish.setBorderPainted(false);
+		finish.setFocusPainted(false);
 		finish.setLocation(440, 540);
 		finish.setSize(380, 50);
 		panel.add(finish);
@@ -284,8 +297,9 @@ public class SignUp2 extends JFrame{
 		// 취소 버튼
 		JButton back = new JButton("취소");
 		back.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		back.setBackground(Color.lightGray);
+		back.setBackground(new Color(221, 221, 221));
 		back.setBorderPainted(false);
+		back.setFocusPainted(false);
 		back.setLocation(440, 600);
 		back.setSize(380, 50);
 		panel.add(back);
