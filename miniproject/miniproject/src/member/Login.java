@@ -1,4 +1,4 @@
-package miniproject.member;
+package member;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
