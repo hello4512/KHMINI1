@@ -158,8 +158,6 @@ public class Login {
 		findIdtxt.setBorder(null);
 		findPwtxt.setBorder(null);
 
-		//JPanel contents = new JPanel();
-		//contents.setLayout(null);
 		JTextField InputName = new JTextField("이름 입력");
 		JTextField InputID = new JTextField("아이디 입력");
 		JTextField InputEmail = new JTextField("이메일주소 입력");
