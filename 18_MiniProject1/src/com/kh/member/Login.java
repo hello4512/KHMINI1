@@ -6,6 +6,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -169,21 +171,26 @@ public class Login {
 		JTextField InputPhone = new JTextField("휴대폰번호 입력 (-제외)");
 		JButton SearchId_btn = new JButton("아이디 찾기");
 		JButton SearchPw_btn = new JButton("비밀번호 찾기");
+		JLabel SearchResult = new JLabel();
 
 		InputName.setSize(200, 50);
 		InputName.setLocation(100, 150);
-		InputEmail.setSize(100, 50);
-		InputEmail.setLocation(260, 10);
+		InputEmail.setSize(200, 50);
+		InputEmail.setLocation(100, 210);
 		
 		InputID.setSize(200, 50);
 		InputID.setLocation(100, 150);
 		InputPhone.setSize(200, 50);
-		InputPhone.setLocation(260, 10);
+		InputPhone.setLocation(100, 210);
+
+		SearchResult.setSize(400, 20);
+		SearchResult.setLocation(0, 300);
+		SearchResult.setHorizontalAlignment(JLabel.CENTER);
 		
 		SearchId_btn.setSize(200, 50);
-		SearchId_btn.setLocation(260, 10);
+		SearchId_btn.setLocation(100, 350);
 		SearchPw_btn.setSize(200, 50);
-		SearchPw_btn.setLocation(260, 10);		
+		SearchPw_btn.setLocation(100, 350);		
 		
 		findArea.add(findTit);
 		findArea.add(findIdtxt);
@@ -191,7 +198,31 @@ public class Login {
 		findArea.add(InputName);
 		findArea.add(InputEmail);
 		findArea.add(SearchId_btn);
+		findArea.add(SearchResult);
 		dialog.add(findArea);
+
+		SearchId_btn.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent e) {
+		    	if(InputName.getText().equals("이름 입력")) {	//	회원 정보 가져오기
+		    		SearchResult.setText("이름" + "님의 아이디는 " + "아이디" + " 입니다.");
+		    		SearchResult.setForeground(Color.BLUE);
+		    	}else {
+		    		SearchResult.setText("일치하는 정보가 없습니다.");
+		    		SearchResult.setForeground(Color.RED);
+		    	}
+		    }
+		});
+		SearchPw_btn.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent e) {
+		    	if(InputID.getText().equals("아이디 입력")) {	//	회원 정보 가져오기
+		    		SearchResult.setText("아이디" + "님의 비밀번호는 " + "qweasd456" + " 입니다.");
+		    		SearchResult.setForeground(Color.BLUE);
+		    	}else {
+		    		SearchResult.setText("일치하는 정보가 없습니다.");
+		    		SearchResult.setForeground(Color.RED);
+		    	}
+		    }
+		});
 		
 		SearchBtn.addActionListener(new ActionListener() {
 			@Override
@@ -204,6 +235,15 @@ public class Login {
 			public void actionPerformed(ActionEvent e) {
 				findIdtxt.setText(textIdOn);
 				findPwtxt.setText(textPwOff);
+				findArea.remove(InputID);
+				findArea.remove(InputPhone);
+				findArea.remove(SearchPw_btn);
+				findArea.add(InputName);
+				findArea.add(InputEmail);
+				findArea.add(SearchId_btn);
+				SearchResult.setText("");
+				findArea.revalidate();
+				findArea.repaint();
 			}			
 		});
 		findPwtxt.addActionListener(new ActionListener() {
@@ -211,6 +251,15 @@ public class Login {
 			public void actionPerformed(ActionEvent e) {
 				findIdtxt.setText(textIdOff);
 				findPwtxt.setText(textPwOn);
+				findArea.remove(InputName);
+				findArea.remove(InputEmail);
+				findArea.remove(SearchId_btn);
+				findArea.add(InputID);
+				findArea.add(InputPhone);
+				findArea.add(SearchPw_btn);
+				SearchResult.setText("");
+				findArea.revalidate();
+				findArea.repaint();
 			}			
 		});
 	}
