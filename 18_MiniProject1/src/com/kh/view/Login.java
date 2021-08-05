@@ -1,4 +1,4 @@
-package com.kh.member;
+package com.kh.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -18,20 +18,23 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Login {
+import com.kh.common.ChangePanel;
+
+public class Login extends JPanel{
+	private MainFrame mfr;
+	private JPanel login;
+	
 	public Image bg = new ImageIcon("icon/bg.jpg").getImage();
-	public Login() {
-		JFrame frame = new JFrame("로그인 화면");
-		frame.setSize(1280,720);
-		
-		JPanel panel = new JPanel() {
-			@Override
-			protected void paintComponent(Graphics g) {
-				g.drawImage(bg, 0, 0, 1280, 720, null);
-			}
-		};		
-		panel.setLayout(null);
-		
+	
+	protected void paintComponent(Graphics g) {
+		g.drawImage(bg, 0, 0, 1280, 720, null);
+	}
+	
+	public Login(MainFrame mf) {
+		this.mfr = mf;
+		this.login = this;
+			
+		this.setLayout(null);
 		
 		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ "01" +"</p></html>";
 		JLabel label = new JLabel(text);
@@ -62,10 +65,10 @@ public class Login {
 		label4.setSize(500, 180);
 		label4.setLocation(500, 200);
 		
-		panel.add(label);
-		panel.add(label2);
-		panel.add(label3);
-		panel.add(label4);
+		this.add(label);
+		this.add(label2);
+		this.add(label3);
+		this.add(label4);
 
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(null);
@@ -133,14 +136,10 @@ public class Login {
 		panel3.add(SearchBtn);
 		
 		panel2.add(panel3);
-		frame.add(panel3);
-		frame.add(panel2);
-		frame.add(panel);		
-				
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);		
+		this.add(panel3);
+		this.add(panel2);		
 
-		JDialog dialog = new JDialog(frame, "아이디/비밀번호 찾기");
+		JDialog dialog = new JDialog(mfr, "아이디/비밀번호 찾기");
 		dialog.setResizable(false);
 		dialog.setBounds(440, 110, 400, 500);
 		JPanel findArea = new JPanel();
@@ -200,6 +199,14 @@ public class Login {
 		findArea.add(SearchId_btn);
 		findArea.add(SearchResult);
 		dialog.add(findArea);
+		
+		
+		JoinBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ChangePanel.changePanel(mfr, login, new SignUp(mf));
+			}			
+		});
 
 		SearchId_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
@@ -263,7 +270,5 @@ public class Login {
 			}			
 		});
 	}
-	public static void main(String[] args) {
-		new Login();
-	}
+	
 }
