@@ -35,7 +35,7 @@ public class SignUp extends JPanel{
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setOpaque(true);
 		title.setForeground(Color.white);
-		title.setBackground(new Color(153, 184, 215));
+		title.setBackground(new Color(52, 152, 219));
 		title.setLocation(0, 0);
 		title.setSize(1280, 80);
 		this.add(title);
@@ -87,7 +87,7 @@ public class SignUp extends JPanel{
 		JButton next = new JButton("¥Ÿ¿Ω ¥‹∞Ë");
 		next.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 18));
 		next.setForeground(Color.white);
-		next.setBackground(new Color(153, 184, 215));
+		next.setBackground(new Color(52, 152, 219));
 		next.setBorderPainted(false);
 		next.setFocusPainted(false);
 		next.setLocation(440, 540);

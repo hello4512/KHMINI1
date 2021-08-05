@@ -2,14 +2,11 @@ package com.kh.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -17,10 +14,14 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import com.kh.common.ChangePanel;
+import com.kh.controller.MemberController;
+import com.kh.model.vo.PcMember;
 
 public class SignUp2 extends JPanel{
 	private MainFrame mfr;
 	private JPanel signUp2;
+	private MemberController mc;
+	private PcMember pm;
 	
 	public SignUp2(MainFrame mf) {
 		this.mfr = mf;
@@ -35,7 +36,7 @@ public class SignUp2 extends JPanel{
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setOpaque(true);
 		title.setForeground(Color.white);
-		title.setBackground(new Color(153, 184, 215));
+		title.setBackground(new Color(52, 152, 219));
 		title.setLocation(0, 0);
 		title.setSize(1280, 80);
 		this.add(title);
@@ -262,7 +263,7 @@ public class SignUp2 extends JPanel{
 		JButton finish = new JButton("회원가입 완료");
 		finish.setFont(new Font("맑은 고딕", Font.BOLD, 18));
 		finish.setForeground(Color.white);
-		finish.setBackground(new Color(153, 184, 215));
+		finish.setBackground(new Color(52, 152, 219));
 		finish.setBorderPainted(false);
 		finish.setFocusPainted(false);
 		finish.setLocation(440, 540);
@@ -280,6 +281,14 @@ public class SignUp2 extends JPanel{
 				if(!inputId.getText().equals("") && !inputName.getText().equals("") && !inputPw.getText().equals("") && !inputPw2.getText().equals("")
 						&& !inputBirth.getText().equals("") && (male.isSelected() || female.isSelected()) && !inputNum.getText().equals("") && !inputEmail.getText().equals("")
 						&& duplId.getText().equals("사용 가능한 아이디입니다.") && samePw.getText().equals("비밀번호가 일치합니다.") && duplNum.getText().equals("사용 가능한 번호입니다.")) {
+					// 입력 정보 PcMember에 저장
+//					if(pm == null) {
+//					int setBirth = Integer.parseInt(inputBirth.getText());
+//					int setPhone = Integer.parseInt(inputNum.getText());
+//					char setGender = 'M';
+//					if(female.isSelected()) setGender = 'F';
+//					mc.addList(new PcMember(inputId.getText(), inputName.getText(), inputPw.getText(), setBirth, setGender, setPhone, inputEmail.getText()));
+//					}
 					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, signUp2, new Login(mf));
 				} else if(duplId.getText().equals("이미 등록된 아이디입니다.")) {
