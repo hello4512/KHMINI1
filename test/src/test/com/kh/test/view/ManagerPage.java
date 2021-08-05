@@ -123,30 +123,43 @@ public class ManagerPage extends JPanel {
 		// JtextField
 		JLabel requests = new JLabel("요청사항");
 		inPanel.add(requests);
-		requests.setFont(new Font("고딕", Font.BOLD, 40));
+		requests.setFont(new Font("고딕", Font.BOLD, 50));
 		requests.setHorizontalAlignment(JLabel.LEFT);
 
 		// 개행용 JLabel
 		JLabel jl3 = new JLabel();
 		inPanel.add(jl3);
-		jl3.setPreferredSize(new Dimension(1000, 100));
+		jl3.setPreferredSize(new Dimension(900, 100));
 
-		// 개행용 JLabel
-		JLabel jl4 = new JLabel();
+		/*// 개행용 JLabel
+		JLabel jl4 = new JLabel("1");
 		inPanel.add(jl4);
 		jl4.setPreferredSize(new Dimension(1000, 50));
-
-		JTextArea ta = new JTextArea(10, 30);
+*/
+		JTextArea ta = new JTextArea(15, 105);
+		inPanel.add(ta);
 		ta.setBackground(Color.black);
 		ta.setForeground(Color.white);
+		ta.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-		// 개행용 JLabel
+		/*// 개행용 JLabel
 		JLabel jl5 = new JLabel();
 		inPanel.add(jl5);
-		jl5.setPreferredSize(new Dimension(700, 50));
-
-		JTextField tf = new JTextField(30);
-
+		jl5.setPreferredSize(new Dimension(800, 50));
+		jl5.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		 */
+		
+		JTextField tf = new JTextField(105);
+		inPanel.add(tf);
+		tf.setLayout(new FlowLayout(FlowLayout.LEFT));
+			
+		/*// 개행용 JLabel
+		JLabel jl6 = new JLabel();
+		inPanel.add(jl6);
+		jl6.setPreferredSize(new Dimension(800, 50));
+		jl6.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		*/
+		
 		tf.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -155,8 +168,6 @@ public class ManagerPage extends JPanel {
 				tf.setText("");
 			}
 		});
-		inPanel.add(ta);
-		inPanel.add(tf);
 
 		this.add(outPanel);
 		mf.add(this);

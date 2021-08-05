@@ -59,7 +59,7 @@ public class LoginAfterPage extends JPanel{
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "자리이동 페이지로");			
+				JOptionPane.showMessageDialog(null, "자리이동 페이지로 이동합니다");			
 			}});
 				
 		// left JPanel 
