@@ -1,7 +1,9 @@
 package com.kh.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -17,34 +19,37 @@ import javax.swing.JRadioButton;
 import com.kh.common.ChangePanel;
 
 public class MainPage extends JPanel{
+	// ChangePanel에 사용할 JFrame과 JPanel -> 이전/다음 창 이벤트 - 패널로 화면 전환
 	private MainFrame mfr;
 	private JPanel mainPage;
+	
+	// 코로나 예방수칙 배경 설정
+	ImageIcon bg = new ImageIcon("icon/background.jpg");
+	
+	public void paintComponent(Graphics g) {
+		Dimension d = getSize();
+		g.drawImage(bg.getImage(), 0, 0, d.width, d.height, null);
+	}
 	
 	public MainPage(MainFrame mf) {
 		this.mfr = mf;
 		this.mainPage = this;
+		
 		this.setLayout(null);
-		
-		// 코로나 예방수칙 배경 설정
-		Image image = new ImageIcon("icon/background.jpg").getImage().getScaledInstance(1280, 720, 0);
-		JLabel imageLabel = new JLabel(new ImageIcon(image));
-		imageLabel.setLocation(0, 0);
-		imageLabel.setSize(1280, 720);
-		this.add(imageLabel);
-		
-		// 방역수칙 질문 1 -> 선택 버튼 (image, label, button)
+
+		// 방역수칙 질문 1 -> 아이콘, 질문, Y/N버튼
 		Image icon = new ImageIcon("icon/airplane.PNG").getImage();
 		JLabel iconLabel = new JLabel(new ImageIcon(icon));
 		iconLabel.setLocation(90, 430);
 		iconLabel.setSize(55, 55);
-		imageLabel.add(iconLabel);
+		this.add(iconLabel);
 		
 		JLabel label = new JLabel("최근 2주 내 해외 방문하신 적이 있습니까?");
 		label.setFont(new Font("맑은 고딕", Font.BOLD, 22));
 		label.setForeground(Color.WHITE);
 		label.setLocation(160, 430);
 		label.setSize(500, 55);
-		imageLabel.add(label);
+		this.add(label);
 		
 		JRadioButton yes1 = new JRadioButton("예");
 		yes1.setFont(new Font("맑은 고딕", Font.BOLD, 22));
@@ -63,22 +68,22 @@ public class MainPage extends JPanel{
 		ButtonGroup yesNo1 = new ButtonGroup();
 		yesNo1.add(yes1);
 		yesNo1.add(no1);
-		imageLabel.add(yes1);
-		imageLabel.add(no1);
+		this.add(yes1);
+		this.add(no1);
 		
 		// 질문 2
 		Image icon2 = new ImageIcon("icon/temp.PNG").getImage();
 		JLabel iconLabel2 = new JLabel(new ImageIcon(icon2));
 		iconLabel2.setLocation(90, 510);
 		iconLabel2.setSize(55, 55);
-		imageLabel.add(iconLabel2);
+		this.add(iconLabel2);
 		
 		JLabel label2 = new JLabel("체온이 37.5도 이상입니까?");
 		label2.setFont(new Font("맑은 고딕", Font.BOLD, 22));
 		label2.setForeground(Color.WHITE);
 		label2.setLocation(160, 510);
 		label2.setSize(500, 55);
-		imageLabel.add(label2);
+		this.add(label2);
 		
 		JRadioButton yes2 = new JRadioButton("예");
 		yes2.setFont(new Font("맑은 고딕", Font.BOLD, 22));
@@ -97,22 +102,22 @@ public class MainPage extends JPanel{
 		ButtonGroup yesNo2 = new ButtonGroup();
 		yesNo2.add(yes2);
 		yesNo2.add(no2);
-		imageLabel.add(yes2);
-		imageLabel.add(no2);
+		this.add(yes2);
+		this.add(no2);
 		
 		// 질문 3
 		Image icon3 = new ImageIcon("icon/note.PNG").getImage();
 		JLabel iconLabel3 = new JLabel(new ImageIcon(icon3));
 		iconLabel3.setLocation(90, 590);
 		iconLabel3.setSize(55, 55);
-		imageLabel.add(iconLabel3);
+		this.add(iconLabel3);
 		
 		JLabel label3 = new JLabel("개인정보 수집에 동의하십니까?");
 		label3.setFont(new Font("맑은 고딕", Font.BOLD, 22));
 		label3.setForeground(Color.WHITE);
 		label3.setLocation(160, 590);
 		label3.setSize(500, 55);
-		imageLabel.add(label3);
+		this.add(label3);
 		
 		JRadioButton yes3 = new JRadioButton("예");
 		yes3.setFont(new Font("맑은 고딕", Font.BOLD, 22));
@@ -131,8 +136,8 @@ public class MainPage extends JPanel{
 		ButtonGroup yesNo3 = new ButtonGroup();
 		yesNo3.add(yes3);
 		yesNo3.add(no3);
-		imageLabel.add(yes3);
-		imageLabel.add(no3);
+		this.add(yes3);
+		this.add(no3);
 		
 		// 확인 버튼
 		JButton btn = new JButton("확인");
@@ -142,7 +147,7 @@ public class MainPage extends JPanel{
 		btn.setFocusPainted(false);
 		btn.setLocation(860, 570);
 		btn.setSize(150, 70);
-		imageLabel.add(btn);
+		this.add(btn);
 		
 		// 확인 버튼 이벤트 -> 질문 N/N/Y일 때 선불결제 화면으로 전환, 입장조건 안 될 경우 화면 안 넘어감
 		btn.addMouseListener(new MouseAdapter() {
