@@ -1,6 +1,5 @@
 package com.kh.member;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -18,8 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login {
-	private Image bg = new ImageIcon
-            (Login.class.getResource("icon/bg.jpg")).getImage();
+	public Image bg = new ImageIcon("icon/bg.jpg").getImage();
 	public Login() {
 		JFrame frame = new JFrame("로그인 화면");
 		frame.setSize(1280,720);
@@ -35,13 +33,9 @@ public class Login {
 		
 		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ "01" +"</p></html>";
 		JLabel label = new JLabel(text);
-		//label.setFont(new Font("",Font.BOLD,40));
-		//label.setForeground(Color.white);
 
 		String PName = "<html><p style=\"color:#E5C9F1;font-size:40px;\">"+ "MINI1 PC" +"</p></html>";
 		JLabel label2 = new JLabel(PName);
-		//label2.setFont(new Font("",Font.BOLD,40));
-		//label2.setForeground(Color.getHSBColor(282, (float)16.6, (float)94.5));
 
 		String PMenu = "<html><p style=\"color:#BEBEBE;font-size:15px;\">"
 					   + "COFFEE<br>" + "DRINK<br>" + "RICE<br>" + "NOODLE<br>" + "CHICKEN<br>" + "SNACK<br>"
@@ -101,6 +95,7 @@ public class Login {
 		JButton JoinBtn = new JButton("회원가입");
 		JButton SearchBtn = new JButton("아이디/비밀번호 찾기");
 		LoginBtn.setBackground(new Color(52, 152, 219));	//RGB
+		LoginBtn.setForeground(Color.white);
 		JoinBtn.setBackground(new Color(224, 224, 224));
 		SearchBtn.setBackground(new Color(224, 224, 224));
 
@@ -141,56 +136,63 @@ public class Login {
 		frame.add(panel);		
 				
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		
+		frame.setVisible(true);		
 
 		JDialog dialog = new JDialog(frame, "아이디/비밀번호 찾기");
+		dialog.setResizable(false);
 		dialog.setBounds(440, 110, 400, 500);
-		JPanel findID = new JPanel();
+		JPanel findArea = new JPanel();
 		JLabel findTit = new JLabel("아이디 / 비밀번호 찾기");
 		findTit.setFont(new Font("",Font.BOLD,30));
-		String textIdOn = "<html><p style=\"width:120px;border-bottom:5px solid black;text-align:center;font-size:15px;\">"+ "아이디 찾기" +"</p></html>";
-		String textIdOff = "<html><p style=\"width:120px;border-bottom:5px solid gray;text-align:center;font-size:15px;color:gray;\">"+ "아이디 찾기" +"</p></html>";
-		String textPwOn = "<html><p style=\"width:120px;border-bottom:5px solid black;text-align:center;font-size:15px;\">"+ "비밀번호 찾기" +"</p></html>";
-		String textPwOff = "<html><p style=\"width:120px;border-bottom:5px solid gray;text-align:center;font-size:15px;color:gray;\">"+ "비밀번호 찾기" +"</p></html>";
+		findTit.setHorizontalAlignment(JLabel.CENTER);
+		String textIdOn = "<html><p style=\"width:140px;border-bottom:5px solid black;text-align:center;font-size:15px;\">"+ "아이디 찾기" +"</p></html>";
+		String textIdOff = "<html><p style=\"width:140px;border-bottom:5px solid gray;text-align:center;font-size:15px;color:gray;\">"+ "아이디 찾기" +"</p></html>";
+		String textPwOn = "<html><p style=\"width:140px;border-bottom:5px solid black;text-align:center;font-size:15px;\">"+ "비밀번호 찾기" +"</p></html>";
+		String textPwOff = "<html><p style=\"width:140px;border-bottom:5px solid gray;text-align:center;font-size:15px;color:gray;\">"+ "비밀번호 찾기" +"</p></html>";
 		JButton findIdtxt = new JButton(textIdOn);
 		JButton findPwtxt = new JButton(textPwOff);
+
+		findArea.setLayout(null);
 		findIdtxt.setBorder(null);
 		findPwtxt.setBorder(null);
+		
+		findTit.setSize(400, 50);
+		findTit.setLocation(0, 10);
+		findIdtxt.setSize(200, 50);
+		findIdtxt.setLocation(0, 60);
+		findPwtxt.setSize(200, 50);
+		findPwtxt.setLocation(200, 60);
 
 		JTextField InputName = new JTextField("이름 입력");
-		JTextField InputID = new JTextField("아이디 입력");
 		JTextField InputEmail = new JTextField("이메일주소 입력");
+		JTextField InputID = new JTextField("아이디 입력");
 		JTextField InputPhone = new JTextField("휴대폰번호 입력 (-제외)");
 		JButton SearchId_btn = new JButton("아이디 찾기");
 		JButton SearchPw_btn = new JButton("비밀번호 찾기");
 
-		InputName.setSize(300, 50);
-		InputName.setLocation(260, 10);
-		InputID.setSize(300, 50);
-		InputID.setLocation(260, 10);
-		InputEmail.setSize(300, 50);
+		InputName.setSize(200, 50);
+		InputName.setLocation(100, 150);
+		InputEmail.setSize(100, 50);
 		InputEmail.setLocation(260, 10);
-		InputPhone.setSize(300, 50);
+		
+		InputID.setSize(200, 50);
+		InputID.setLocation(100, 150);
+		InputPhone.setSize(200, 50);
 		InputPhone.setLocation(260, 10);
-		SearchId_btn.setSize(300, 50);
+		
+		SearchId_btn.setSize(200, 50);
 		SearchId_btn.setLocation(260, 10);
-		SearchPw_btn.setSize(300, 50);
-		SearchPw_btn.setLocation(260, 10);
+		SearchPw_btn.setSize(200, 50);
+		SearchPw_btn.setLocation(260, 10);		
 		
+		findArea.add(findTit);
+		findArea.add(findIdtxt);
+		findArea.add(findPwtxt);
+		findArea.add(InputName);
+		findArea.add(InputEmail);
+		findArea.add(SearchId_btn);
+		dialog.add(findArea);
 		
-		findID.add(findTit);
-		findID.add(findIdtxt);
-		findID.add(findPwtxt);
-		findID.add(InputName);
-		findID.add(InputEmail);
-		findID.add(SearchId_btn);
-		//dialog.add(contents);
-		dialog.add(findID);
-		
-		JPanel findPW = new JPanel();
-		
-
 		SearchBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
