@@ -682,7 +682,7 @@ public class MainPage extends JPanel {
 				int sum = 0;
 				for(JSpinner j : splist) {
 				    for(Product p1 : selectedProduct) {
-					int price =  p.getPrice() * (int)j.getValue();
+					int price =  p1.getPrice() * (int)j.getValue();
 					sum += price;	
 					orderB2.setText("" + sum);
 					
