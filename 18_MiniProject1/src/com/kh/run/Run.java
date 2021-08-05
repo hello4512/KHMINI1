@@ -8,8 +8,8 @@ public class Run {
 
 	public static void main(String[] args) {
 		new MainFrame();
-//		new SignUp();
-//		new SignUp2();
+	// new SignUp();
+	new SignUp2();
 	}
 
 }
