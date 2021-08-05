@@ -732,8 +732,6 @@ public class MainPage extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JOptionPane.showMessageDialog(null, "주문이 완료 되었습니다.");
-			
-				
 			}
 		});
 
