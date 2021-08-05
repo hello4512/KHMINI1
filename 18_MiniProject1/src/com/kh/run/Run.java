@@ -7,9 +7,9 @@ import com.kh.view.SignUp2;
 public class Run {
 
 	public static void main(String[] args) {
-		new MainFrame();
-	// new SignUp();
-	new SignUp2();
+		//new MainFrame();
+	 new SignUp();
+	// new SignUp2();
 	}
 
 }
