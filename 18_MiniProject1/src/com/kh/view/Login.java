@@ -217,15 +217,17 @@ public class Login extends JPanel{
 		//TEST		
 		//	id, 이름, pw, 생년월일, 성별, 핸드폰, 이메일
 		list = a.fileOpen();	//	먼저 파일 오픈
-//		list.add(new PcMember("admin1", "관리자", "pass", 1, '성', 2, "1"));
-//		list.add(new PcMember("admin2", "관리자", "pass", 1, '성', 2, "2"));
-//		list.add(new PcMember("admin3", "관리자", "pass", 1, '성', 2, "3"));
-//		list.add(new PcMember("admin4", "관리자", "pass", 1, '성', 2, "4"));
+//		테스트로 미리 생성
+//		list.add(new PcMember("admin1", "관리자", "pass", 1, '성', "0101234", "1"));
+//		list.add(new PcMember("admin2", "관리자", "pass", 1, '성', "0102345", "2"));
+//		list.add(new PcMember("admin3", "관리자", "pass", 1, '성', "0103456", "3"));
+//		list.add(new PcMember("admin4", "관리자", "pass", 1, '성', "0104567", "4"));
 		a.fileSave(list);
+		System.out.println("리스트 확인");
+		System.out.println(list);
 		
 		SearchId_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	System.out.println(list);
 		    	int value = -1;
 		    	for(int i = 0; i < list.size(); i++) {
 		    		if(InputName.getText().equals(list.get(i).getUserName()) &&
@@ -244,8 +246,16 @@ public class Login extends JPanel{
 		});
 		SearchPw_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	if(InputID.getText().equals("아이디 입력")) {	//	회원 정보 가져오기
-		    		SearchResult.setText("아이디" + "님의 비밀번호는 " + "qweasd456" + " 입니다.");
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(InputID.getText().equals(list.get(i).getUserId()) &&
+		    		InputPhone.getText().equals(list.get(i).getUserPhone())) {
+		    			value = i;
+		    		}
+		    	}
+		    	System.out.println(value);
+		    	if(value >= 0) {
+		    		SearchResult.setText(list.get(value).getUserId() + "님의 비밀번호는 " + list.get(value).getUserPw() + " 입니다.");
 		    		SearchResult.setForeground(Color.BLUE);
 		    	}else {
 		    		SearchResult.setText("일치하는 정보가 없습니다.");

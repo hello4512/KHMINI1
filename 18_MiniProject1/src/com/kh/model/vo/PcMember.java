@@ -11,12 +11,12 @@ public class PcMember implements Serializable{
 	private String userPw;		// 비밀번호
 	private int userBirth;		// 생년월일
 	private char gender;		// 성별
-	private int userPhone;		// 핸드폰번호
+	private String userPhone;		// 핸드폰번호
 	private String userEmail;	// 이메일
 	
 	public PcMember() {}
 
-	public PcMember(String userId, String userName, String userPw, int userBirth, char gender, int userPhone,
+	public PcMember(String userId, String userName, String userPw, int userBirth, char gender, String userPhone,
 			String userEmail) {
 		super();
 		this.userId = userId;
@@ -68,11 +68,11 @@ public class PcMember implements Serializable{
 		this.gender = gender;
 	}
 
-	public int getUserPhone() {
+	public String getUserPhone() {
 		return userPhone;
 	}
 
-	public void setUserPhone(int userPhone) {
+	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
 
@@ -93,7 +93,7 @@ public class PcMember implements Serializable{
 		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
 		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
-		result = prime * result + userPhone;
+		result = prime * result + ((userPhone == null) ? 0 : userPhone.hashCode());
 		result = prime * result + ((userPw == null) ? 0 : userPw.hashCode());
 		return result;
 	}
