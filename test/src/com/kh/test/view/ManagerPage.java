@@ -104,7 +104,7 @@ public class ManagerPage extends JPanel {
 		// 개행용 JLabel
 		JLabel jl2 = new JLabel();
 		inPanel.add(jl2);
-		jl2.setPreferredSize(new Dimension(1010, 60));
+		jl2.setPreferredSize(new Dimension(1010, 10));
 
 		// right JPanel "주문접수" button
 		JButton menubutton = new JButton("주문접수");
@@ -143,7 +143,7 @@ public class ManagerPage extends JPanel {
 		inPanel.add(jl4);
 		jl4.setPreferredSize(new Dimension(1000, 50));
 */
-		JTextArea ta = new JTextArea(15, 105);
+		JTextArea ta = new JTextArea(10, 105);
 		inPanel.add(ta);
 		ta.setBackground(Color.black);
 		ta.setForeground(Color.white);
