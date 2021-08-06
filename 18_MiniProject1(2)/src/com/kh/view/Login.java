@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -204,6 +205,25 @@ public class Login extends JPanel{
 		findArea.add(SearchResult);
 		dialog.add(findArea);
 		
+		LoginBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(IdArea.getText().equals(list.get(i).getUserId()) &&
+		    		PwArea.getText().equals(list.get(i).getUserPw())) {
+		    			value = i;
+		    		}
+		    	}
+		    	System.out.println(PwArea.getText());
+		    	if(value >= 0) {
+		    		JOptionPane.showMessageDialog(null, "로그인 성공", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
+					//ChangePanel.changePanel(mfr, login, new (mf));
+		    	}else {
+		    		JOptionPane.showMessageDialog(null, "로그인 실패", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
+		    	}
+			}			
+		});
 		
 		JoinBtn.addActionListener(new ActionListener() {
 			@Override
