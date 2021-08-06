@@ -928,5 +928,7 @@ public class CafePage extends JPanel {
 		this.add(pay);
 
 		mf.add(this);
+		
 	}
+	
 }

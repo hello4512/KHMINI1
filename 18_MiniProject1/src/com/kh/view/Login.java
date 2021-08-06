@@ -41,7 +41,7 @@ public class Login extends JPanel{
 			
 		this.setLayout(null);
 		
-		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ "01" +"</p></html>";
+		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ mfr.SeatNumber +"</p></html>";
 		JLabel label = new JLabel(text);
 
 		String PName = "<html><p style=\"color:#E5C9F1;font-size:40px;\">"+ "MINI1 PC" +"</p></html>";

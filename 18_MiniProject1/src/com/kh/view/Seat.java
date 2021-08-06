@@ -43,6 +43,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 1;
 				JOptionPane.showMessageDialog(null, "1번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -59,6 +60,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 2;
 				JOptionPane.showMessageDialog(null, "2번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -74,6 +76,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 3;
 				JOptionPane.showMessageDialog(null, "3번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -89,6 +92,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 4;
 				JOptionPane.showMessageDialog(null, "4번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -104,6 +108,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 5;
 				JOptionPane.showMessageDialog(null, "5번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -119,6 +124,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 6;
 				JOptionPane.showMessageDialog(null, "6번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -134,6 +140,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 7;
 				JOptionPane.showMessageDialog(null, "7번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -149,6 +156,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 8;
 				JOptionPane.showMessageDialog(null, "8번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -164,6 +172,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 9;
 				JOptionPane.showMessageDialog(null, "9번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -179,6 +188,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 10;
 				JOptionPane.showMessageDialog(null, "10번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -194,6 +204,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 11;
 				JOptionPane.showMessageDialog(null, "11번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -209,6 +220,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 12;
 				JOptionPane.showMessageDialog(null, "12번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -224,6 +236,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 13;
 				JOptionPane.showMessageDialog(null, "13번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -239,6 +252,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 14;
 				JOptionPane.showMessageDialog(null, "14번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -254,6 +268,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 15;
 				JOptionPane.showMessageDialog(null, "15번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -269,6 +284,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 16;
 				JOptionPane.showMessageDialog(null, "16번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -284,6 +300,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 17;
 				JOptionPane.showMessageDialog(null, "17번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -299,6 +316,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 18;
 				JOptionPane.showMessageDialog(null, "18번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -314,6 +332,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 19;
 				JOptionPane.showMessageDialog(null, "19번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -329,6 +348,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 20;
 				JOptionPane.showMessageDialog(null, "20번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -344,6 +364,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 21;
 				JOptionPane.showMessageDialog(null, "21번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -359,6 +380,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 22;
 				JOptionPane.showMessageDialog(null, "22번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -374,6 +396,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 23;
 				JOptionPane.showMessageDialog(null, "23번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -389,6 +412,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 24;
 				JOptionPane.showMessageDialog(null, "24번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -404,6 +428,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 25;
 				JOptionPane.showMessageDialog(null, "25번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -419,6 +444,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 26;
 				JOptionPane.showMessageDialog(null, "26번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -434,6 +460,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 27;
 				JOptionPane.showMessageDialog(null, "27번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -449,6 +476,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 28;
 				JOptionPane.showMessageDialog(null, "28번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -464,6 +492,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 29;
 				JOptionPane.showMessageDialog(null, "29번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -479,6 +508,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 30;
 				JOptionPane.showMessageDialog(null, "30번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -494,6 +524,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 31;
 				JOptionPane.showMessageDialog(null, "31번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -509,6 +540,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 32;
 				JOptionPane.showMessageDialog(null, "32번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -524,6 +556,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 33;
 				JOptionPane.showMessageDialog(null, "33번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -539,6 +572,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 34;
 				JOptionPane.showMessageDialog(null, "34번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -554,6 +588,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 35;
 				JOptionPane.showMessageDialog(null, "35번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -569,6 +604,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 36;
 				JOptionPane.showMessageDialog(null, "36번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -584,6 +620,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 37;
 				JOptionPane.showMessageDialog(null, "37번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -599,6 +636,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 38;
 				JOptionPane.showMessageDialog(null, "38번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -614,6 +652,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 39;
 				JOptionPane.showMessageDialog(null, "39번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -629,6 +668,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 40;
 				JOptionPane.showMessageDialog(null, "40번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -644,6 +684,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 41;
 				JOptionPane.showMessageDialog(null, "41번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -659,6 +700,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 42;
 				JOptionPane.showMessageDialog(null, "42번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -674,6 +716,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 43;
 				JOptionPane.showMessageDialog(null, "43번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -689,6 +732,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 44;
 				JOptionPane.showMessageDialog(null, "44번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -704,6 +748,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 45;
 				JOptionPane.showMessageDialog(null, "45번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -719,6 +764,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 46;
 				JOptionPane.showMessageDialog(null, "46번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -734,6 +780,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 47;
 				JOptionPane.showMessageDialog(null, "47번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -749,6 +796,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 48;
 				JOptionPane.showMessageDialog(null, "48번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -764,6 +812,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 49;
 				JOptionPane.showMessageDialog(null, "49번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -779,6 +828,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 50;
 				JOptionPane.showMessageDialog(null, "50번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -794,6 +844,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 51;
 				JOptionPane.showMessageDialog(null, "51번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -809,6 +860,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 52;
 				JOptionPane.showMessageDialog(null, "52번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -824,6 +876,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 53;
 				JOptionPane.showMessageDialog(null, "53번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -839,6 +892,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 54;
 				JOptionPane.showMessageDialog(null, "54번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -854,6 +908,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 55;
 				JOptionPane.showMessageDialog(null, "55번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -869,6 +924,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 56;
 				JOptionPane.showMessageDialog(null, "56번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -884,6 +940,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 57;
 				JOptionPane.showMessageDialog(null, "57번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -899,6 +956,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 58;
 				JOptionPane.showMessageDialog(null, "58번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -914,6 +972,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 59;
 				JOptionPane.showMessageDialog(null, "59번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -929,6 +988,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 60;
 				JOptionPane.showMessageDialog(null, "60번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -944,6 +1004,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 61;
 				JOptionPane.showMessageDialog(null, "61번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -959,6 +1020,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 62;
 				JOptionPane.showMessageDialog(null, "62번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -974,6 +1036,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 63;
 				JOptionPane.showMessageDialog(null, "63번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -989,6 +1052,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 64;
 				JOptionPane.showMessageDialog(null, "64번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1004,6 +1068,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 65;
 				JOptionPane.showMessageDialog(null, "65번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1019,6 +1084,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 66;
 				JOptionPane.showMessageDialog(null, "66번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1034,6 +1100,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 67;
 				JOptionPane.showMessageDialog(null, "67번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1049,6 +1116,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 68;
 				JOptionPane.showMessageDialog(null, "68번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1064,6 +1132,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 69;
 				JOptionPane.showMessageDialog(null, "69번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1079,6 +1148,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 70;
 				JOptionPane.showMessageDialog(null, "70번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1094,6 +1164,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 71;
 				JOptionPane.showMessageDialog(null, "71번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1109,6 +1180,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 72;
 				JOptionPane.showMessageDialog(null, "72번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1124,6 +1196,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 73;
 				JOptionPane.showMessageDialog(null, "73번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1139,6 +1212,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 74;
 				JOptionPane.showMessageDialog(null, "74번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1154,6 +1228,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 75;
 				JOptionPane.showMessageDialog(null, "75번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1169,6 +1244,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 76;
 				JOptionPane.showMessageDialog(null, "76번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1184,6 +1260,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 77;
 				JOptionPane.showMessageDialog(null, "77번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1199,6 +1276,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 78;
 				JOptionPane.showMessageDialog(null, "78번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1214,6 +1292,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 79;
 				JOptionPane.showMessageDialog(null, "79번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1229,6 +1308,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 80;
 				JOptionPane.showMessageDialog(null, "80번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1244,6 +1324,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 81;
 				JOptionPane.showMessageDialog(null, "81번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1259,6 +1340,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 82;
 				JOptionPane.showMessageDialog(null, "82번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1274,6 +1356,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 83;
 				JOptionPane.showMessageDialog(null, "83번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1289,6 +1372,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 84;
 				JOptionPane.showMessageDialog(null, "84번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1304,6 +1388,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 85;
 				JOptionPane.showMessageDialog(null, "85번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1319,6 +1404,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 86;
 				JOptionPane.showMessageDialog(null, "86번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1334,6 +1420,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 87;
 				JOptionPane.showMessageDialog(null, "87번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1349,6 +1436,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 88;
 				JOptionPane.showMessageDialog(null, "88번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1364,6 +1452,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 89;
 				JOptionPane.showMessageDialog(null, "89번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1379,6 +1468,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 90;
 				JOptionPane.showMessageDialog(null, "90번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1394,6 +1484,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 91;
 				JOptionPane.showMessageDialog(null, "91번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1409,6 +1500,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 92;
 				JOptionPane.showMessageDialog(null, "92번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1424,6 +1516,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 93;
 				JOptionPane.showMessageDialog(null, "93번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1439,6 +1532,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 94;
 				JOptionPane.showMessageDialog(null, "94번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1454,6 +1548,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 95;
 				JOptionPane.showMessageDialog(null, "95번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1469,6 +1564,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 96;
 				JOptionPane.showMessageDialog(null, "96번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1484,6 +1580,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 97;
 				JOptionPane.showMessageDialog(null, "97번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}
@@ -1499,6 +1596,7 @@ public class Seat extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				mfr.SeatNumber = 98;
 				JOptionPane.showMessageDialog(null, "98번 좌석이 선택되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 				ChangePanel.changePanel(mfr, seat, new PaymentScreen(mf));
 			}

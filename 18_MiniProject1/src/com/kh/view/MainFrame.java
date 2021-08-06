@@ -3,6 +3,7 @@ package com.kh.view;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
+	public static int SeatNumber;		//	좌석 번호	
 	
 	public MainFrame() {
 		super("PC방 프로그램");
