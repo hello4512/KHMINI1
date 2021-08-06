@@ -35,8 +35,8 @@ public class CafePage extends JPanel {
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
 	
-	ImageIcon img = new ImageIcon("./image/back.png");
-	ImageIcon img1 = new ImageIcon("./image/reset.png");
+	ImageIcon img = new ImageIcon("icon/back.png");
+	ImageIcon img1 = new ImageIcon("icon/reset.png");
 
 	public CafePage(MainFrame mf) {
 		this.mfr = mf;
@@ -88,7 +88,7 @@ public class CafePage extends JPanel {
 		foodMenuM1.setBackground(Color.white);
 		foodMenuM1.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon1 = new ImageIcon("image/Swingchip.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon1 = new ImageIcon("icon/Swingchip.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label1 = new JLabel(new ImageIcon(icon1));
 		label1.setLocation(20, -10);
 		label1.setSize(120, 200);
@@ -125,7 +125,7 @@ public class CafePage extends JPanel {
 		foodMenuM2.setBackground(Color.white);
 		foodMenuM2.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon2 = new ImageIcon("image/꼬깔콘.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon2 = new ImageIcon("icon/꼬깔콘.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label2 = new JLabel(new ImageIcon(icon2));
 		label2.setLocation(20, -10);
 		label2.setSize(120, 200);
@@ -162,7 +162,7 @@ public class CafePage extends JPanel {
 		foodMenuM3.setBackground(Color.white);
 		foodMenuM3.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon3 = new ImageIcon("image/꾸이맨.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon3 = new ImageIcon("icon/꾸이맨.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label3 = new JLabel(new ImageIcon(icon3));
 		label3.setLocation(20, -10);
 		label3.setSize(120, 200);
@@ -200,7 +200,7 @@ public class CafePage extends JPanel {
 		foodMenuM4.setBackground(Color.white);
 		foodMenuM4.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon4 = new ImageIcon("image/꿀꽈배기.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon4 = new ImageIcon("icon/꿀꽈배기.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label4 = new JLabel(new ImageIcon(icon4));
 		label4.setLocation(20, -10);
 		label4.setSize(120, 200);
@@ -237,7 +237,7 @@ public class CafePage extends JPanel {
 		foodMenuM5.setBackground(Color.white);
 		foodMenuM5.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon5 = new ImageIcon("image/숏다리.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon5 = new ImageIcon("icon/숏다리.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label5 = new JLabel(new ImageIcon(icon5));
 		label5.setLocation(20, -10);
 		label5.setSize(120, 200);
@@ -274,7 +274,7 @@ public class CafePage extends JPanel {
 		foodMenuM6.setBackground(Color.white);
 		foodMenuM6.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon6 = new ImageIcon("image/야채타임.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon6 = new ImageIcon("icon/야채타임.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label6 = new JLabel(new ImageIcon(icon6));
 		label6.setLocation(20, -10);
 		label6.setSize(120, 200);
@@ -311,7 +311,7 @@ public class CafePage extends JPanel {
 		foodMenuM7.setBackground(Color.white);
 		foodMenuM7.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon7 = new ImageIcon("image/자유시간.png").getImage().getScaledInstance(150, 100, 0);
+		Image icon7 = new ImageIcon("icon/자유시간.png").getImage().getScaledInstance(150, 100, 0);
 		JLabel label7 = new JLabel(new ImageIcon(icon7));
 		label7.setLocation(20, 30);
 		label7.setSize(120, 100);
@@ -348,7 +348,7 @@ public class CafePage extends JPanel {
 		foodMenuM8.setBackground(Color.white);
 		foodMenuM8.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon8 = new ImageIcon("image/초코송이.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon8 = new ImageIcon("icon/초코송이.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label8 = new JLabel(new ImageIcon(icon8));
 		label8.setLocation(20, -10);
 		label8.setSize(120, 200);
@@ -385,7 +385,7 @@ public class CafePage extends JPanel {
 		foodMenuM9.setBackground(Color.white);
 		foodMenuM9.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon9 = new ImageIcon("image/칸초.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon9 = new ImageIcon("icon/칸초.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label9 = new JLabel(new ImageIcon(icon9));
 		label9.setLocation(20, -10);
 		label9.setSize(120, 200);
@@ -422,7 +422,7 @@ public class CafePage extends JPanel {
 		foodMenuM10.setBackground(Color.white);
 		foodMenuM10.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon10 = new ImageIcon("image/홈런볼.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon10 = new ImageIcon("icon/홈런볼.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label10 = new JLabel(new ImageIcon(icon10));
 		label10.setLocation(20, -10);
 		label10.setSize(120, 200);
