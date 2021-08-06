@@ -765,6 +765,27 @@ public class MainPage extends JPanel {
 		orderB2.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 20 ));
 		
 
+
+
+
+		JButton orderT = new JButton("¡÷πÆ∞·¡§«œ±‚");
+		orderT.setLocation(860, 30);
+		orderT.setSize(370, 50);
+		orderT.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 20));
+		orderT.setBackground(new Color(217, 229, 255));
+
+		orderT.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+
+				Product p = new Product();
+				int sum = 0;
+				for (int i = 0; i < selectedProduct.size(); i++) {
+					sum += selectedProduct.get(i).getPrice() * (int) splist.get(i).getValue();
+					orderB2.setText(sum + "");
+				}
+			}
+		});
+		
 		JButton reset = new JButton();
 		reset.setLocation(785,30);
 		reset.setSize(60, 50);
@@ -791,45 +812,11 @@ public class MainPage extends JPanel {
 				button8.setEnabled(true);
 				button9.setEnabled(true);
 				button10.setEnabled(true);
-				orderB2.setText("");
+				orderB2.remove(text);
+				orderB2.revalidate();
+				orderB2.repaint();
 
 			}
-		});
-
-
-
-		JButton orderT = new JButton("¡÷πÆ∞·¡§«œ±‚");
-		orderT.setLocation(860, 30);
-		orderT.setSize(370, 50);
-		orderT.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 20 ));
-		orderT.setBackground(new Color(217,229,255));
-		
-		orderT.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-
-				Product p = new Product();
-				int sum = 0;
-				int sum1 = 0;
-				int value = 0;
-				int price = 0;
-				
-			
-		
-			
-				  for(Product p1 : selectedProduct) {
-					// orderB2.setText(p1.getPrice() +"");
-				    	for(JSpinner j : splist) {				
-				  // orderB2.setText((int)j.getValue()+"");
-				    	
-				    	price = p1.getPrice() * (int)j.getValue();
-				    	//orderB2.setText(price+"");
-				    	sum += price;
-				    	orderB2.setText(sum + "");
-				}
-				   
-				} 
-			}
-		
 		});
 		
 //		JTextField bill = new JTextField();
