@@ -1,9 +1,9 @@
-package com.kh.model.vo;
+package com.kh.menu.model.vo;
 
-// PC방 메뉴 목록 관리 클래스
 public class Product {
 	private String productName;
 	private int price;
+	
 	
 	public Product() {}
 	
