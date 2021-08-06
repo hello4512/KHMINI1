@@ -7,7 +7,7 @@ import com.kh.view.SignUp2;
 public class Run {
 
 	public static void main(String[] args) {
-		//new MainFrame();
+		new MainFrame();
 	 //new SignUp(null);
 	 //new SignUp2();
 	}

@@ -138,7 +138,7 @@ public class PcMember implements Serializable{
 
 	@Override
 	public String toString() {
-		return "PcMember [userId=" + userId + ", userName=" + userName + ", userPw=" + userPw + ", userBirth="
+		return "\nPcMember [userId=" + userId + ", userName=" + userName + ", userPw=" + userPw + ", userBirth="
 				+ userBirth + ", gender=" + gender + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
 	}
 }

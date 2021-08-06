@@ -40,6 +40,8 @@ public class Login extends JPanel{
 			
 		this.setLayout(null);
 		
+		
+		//	text에 좌석번호 불러오기
 		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ "01" +"</p></html>";
 		JLabel label = new JLabel(text);
 
