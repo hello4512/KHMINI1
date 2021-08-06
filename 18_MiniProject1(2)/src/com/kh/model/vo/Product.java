@@ -1,4 +1,4 @@
-package com.kh.menu.model.vo;
+package com.kh.model.vo;
 
 public class Product {
 	private String productName;

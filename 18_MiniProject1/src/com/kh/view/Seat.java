@@ -152,7 +152,7 @@ public class Seat extends JPanel{
 		b8.setFont(b8.getFont().deriveFont(20.0f));
 		panel.add(b8);
 		
-		b2.addActionListener(new ActionListener() {
+		b8.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -168,7 +168,7 @@ public class Seat extends JPanel{
 		b9.setFont(b9.getFont().deriveFont(20.0f));
 		panel.add(b9);
 
-		b2.addActionListener(new ActionListener() {
+		b9.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
