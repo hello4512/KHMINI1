@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -14,14 +15,14 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import com.kh.common.ChangePanel;
-import com.kh.controller.MemberController;
+import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.PcMember;
 
 public class SignUp2 extends JPanel{
 	private MainFrame mfr;
 	private JPanel signUp2;
-	private MemberController mc;
-	private PcMember pm;
+	private MemberDao md = new MemberDao();
+	private ArrayList<PcMember> list = new ArrayList<>();
 	
 	public SignUp2(MainFrame mf) {
 		this.mfr = mf;
@@ -29,6 +30,10 @@ public class SignUp2 extends JPanel{
 		
 		this.setLayout(null);
 		this.setBackground(new Color(246, 246, 246));
+		
+		list = md.fileOpen();
+//		System.out.println("리스트 확인");
+//		System.out.println(list);
 		
 		// 타이틀
 		JLabel title = new JLabel("회원 가입");
@@ -74,10 +79,15 @@ public class SignUp2 extends JPanel{
 		checkId.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				/*if(ArrayList.searchId(inputId.getText) > 0) { // 회원정보 컬렉션 controller 아이디 검색 기능 생성 -> 매개변수로 문자열 입력값 전송 -> 일치하는 값 있으면 result 1 증가
+				int value = 0;
+				for(int i = 0; i < list.size(); i++) {
+					if(inputId.getText().equals(list.get(i).getUserId()))
+						value++;
+				}
+				if(value > 0) {
 					duplId.setText("이미 등록된 아이디입니다.");
 					duplId.setForeground(Color.red);
-				} else*/ if(inputId.getText().equals("")) {
+				} else if(inputId.getText().equals("")) {
 					duplId.setText("아이디를 입력해주세요.");
 					duplId.setForeground(Color.red);
 				} else {
@@ -234,10 +244,15 @@ public class SignUp2 extends JPanel{
 		checkNum.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				/*if(ArrayList.searchNum(inputNum.getText) > 0) { // controller 번호 검색 기능 생성 -> 매개변수로 문자열 입력값 전송 -> 일치하는 값 있으면 result 1 증가
+				int value = 0;
+				for(int i = 0; i < list.size(); i++) {
+					if(inputNum.getText().equals(list.get(i).getUserPhone()))
+						value++;
+				}
+				if(value > 0) {
 					duplNum.setText("이미 등록된 번호입니다.");
 					duplNum.setForeground(Color.red);
-				} else*/ if(inputNum.getText().equals("")) {
+				} else if(inputNum.getText().equals("")) {
 					duplNum.setText("번호를 입력해주세요.");
 					duplNum.setForeground(Color.red);
 				} else {
@@ -282,13 +297,12 @@ public class SignUp2 extends JPanel{
 						&& !inputBirth.getText().equals("") && (male.isSelected() || female.isSelected()) && !inputNum.getText().equals("") && !inputEmail.getText().equals("")
 						&& duplId.getText().equals("사용 가능한 아이디입니다.") && samePw.getText().equals("비밀번호가 일치합니다.") && duplNum.getText().equals("사용 가능한 번호입니다.")) {
 					// 입력 정보 PcMember에 저장
-//					if(pm == null) {
-//					int setBirth = Integer.parseInt(inputBirth.getText());
-//					int setPhone = Integer.parseInt(inputNum.getText());
-//					char setGender = 'M';
-//					if(female.isSelected()) setGender = 'F';
-//					mc.addList(new PcMember(inputId.getText(), inputName.getText(), inputPw.getText(), setBirth, setGender, setPhone, inputEmail.getText()));
-//					}
+					int setBirth = Integer.parseInt(inputBirth.getText());
+					char setGender = 'M';
+					if(female.isSelected()) setGender = 'F';
+					list.add(new PcMember(inputId.getText(), inputName.getText(), inputPw.getText(), setBirth, setGender, inputNum.getText(), inputEmail.getText()));
+					md.fileSave(list);
+					// 로그인 화면으로 돌아가기
 					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, signUp2, new Login(mf));
 				} else if(duplId.getText().equals("이미 등록된 아이디입니다.")) {

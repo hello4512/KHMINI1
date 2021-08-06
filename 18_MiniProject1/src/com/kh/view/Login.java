@@ -13,14 +13,12 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.kh.common.ChangePanel;
-import com.kh.controller.MemberController;
 import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.PcMember;
 
