@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import com.kh.test.common.ChangePanel;
+import com.kh.test.model.vo.Product;
+
 public class ManagerPage extends JPanel {
 	private MainFrame mfr;
 	private JPanel managerpage;
@@ -27,6 +30,8 @@ public class ManagerPage extends JPanel {
 		this.mfr = mf;
 		this.managerpage = this;
 
+		Product pd = new Product();
+		
 		// 관리자 화면
 
 		// out JPanel 바탕화면
@@ -51,15 +56,15 @@ public class ManagerPage extends JPanel {
 		// jmjl.setLayout(new FlowLayout(FlowLayout.CENTER));
 
 		// 주문목록 JLabel
-		JLabel menujl1 = new JLabel("메뉴");
+		JLabel menujl1 = new JLabel("메뉴 : " + pd.getProductName());
 		inPanel.add(menujl1);
-		menujl1.setPreferredSize(new Dimension(300, 60));
+		menujl1.setPreferredSize(new Dimension(300, 120));
 		menujl1.setFont(new Font("고딕", Font.BOLD, 20));
 
 		// 주문갯수 JLabel
-		JLabel menujl2 = new JLabel("갯수");
+		JLabel menujl2 = new JLabel("갯수 : " + pd.getPrice());
 		inPanel.add(menujl2);
-		menujl2.setPreferredSize(new Dimension(300, 60));
+		menujl2.setPreferredSize(new Dimension(300, 120));
 		menujl2.setFont(new Font("고딕", Font.BOLD, 20));
 
 		// 개행용 JLabel
@@ -75,14 +80,16 @@ public class ManagerPage extends JPanel {
 		move.setForeground(Color.white);
 		move.setPreferredSize(new Dimension(120, 60));
 		move.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		move.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "요청완료");			
-			}});
+		move.addActionListener(new ActionListener() {
 
-		// 주문목록 JLabel
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "요청완료", "요청완료", JOptionPane.PLAIN_MESSAGE);
+				ChangePanel.changePanel(mfr, managerpage, new LoginAfterPage(mf));
+			}
+		});
+
+		/*// 주문목록 JLabel
 		JLabel menujl3 = new JLabel("메뉴");
 		inPanel.add(menujl3);
 		menujl3.setPreferredSize(new Dimension(300, 60));
@@ -93,11 +100,11 @@ public class ManagerPage extends JPanel {
 		inPanel.add(menujl4);
 		menujl4.setPreferredSize(new Dimension(300, 60));
 		menujl4.setFont(new Font("고딕", Font.BOLD, 20));
-		
+		*/
 		// 개행용 JLabel
 		JLabel jl2 = new JLabel();
 		inPanel.add(jl2);
-		jl2.setPreferredSize(new Dimension(400, 60));
+		jl2.setPreferredSize(new Dimension(1010, 60));
 
 		// right JPanel "주문접수" button
 		JButton menubutton = new JButton("주문접수");
