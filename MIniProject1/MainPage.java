@@ -3,6 +3,7 @@ package com.kh.menu.view;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,15 +12,19 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ButtonGroup;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.border.Border;
 
 import com.kh.menu.model.vo.Product;
 
@@ -29,16 +34,20 @@ public class MainPage extends JPanel {
 	private JPanel mainPage;
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
+	
+	ImageIcon img = new ImageIcon("./image/back.png");
+	ImageIcon img1 = new ImageIcon("./image/reset.png");
 
 	public MainPage(MainFrame mf) {
 		this.mfr = mf;
 		this.mainPage = this;
 		this.setLayout(null);
-		this.setBackground(Color.LIGHT_GRAY);
+		this.setBackground(new Color(3,0,102));
 
 		// ÇÏ´Ü Á¤º¸ ÆÐ³Î
 		JPanel infor = new JPanel();
 		JLabel text = new JLabel("¼±ÅÃµÈ Á¦Ç°ÀÌ ¾ø½À´Ï´Ù.");
+		text.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20 ));
 		infor.setBackground(Color.white);
 		infor.setLocation(30, 630);
 		infor.setSize(1200, 30);
@@ -46,11 +55,13 @@ public class MainPage extends JPanel {
 		this.add(infor);
 
 		// »óÀ§¸Þ´º
-		JPanel foodMenuT = new JPanel();
-		foodMenuT.setLocation(30, 30);
-		foodMenuT.setSize(600, 50);
+		JLabel name = new JLabel("NIMI PC1 Cafe menu");
+		name.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 40));
+		name.setForeground(new Color(246,246,246));
+		name.setLocation(30, 30);
+		name.setSize(600, 50);
 
-		foodMenuT.setLayout(null);
+		name.setLayout(null);
 
 		JButton btn1 = new JButton("°úÀÚ·ù");
 		btn1.setLocation(107, 10);
@@ -62,7 +73,7 @@ public class MainPage extends JPanel {
 		btn3.setLocation(422, 10);
 		btn3.setSize(100, 40);
 
-		foodMenuT.add(btn1);
+		//foodMenuT.add(btn1);
 		// foodMenuT.add(btn2);
 		// foodMenuT.add(btn3);
 
@@ -84,18 +95,27 @@ public class MainPage extends JPanel {
 		foodMenuM1.add(label1);
 		// °úÀÚÀÌ¸§
 		JTextField name1 = new JTextField("½ºÀ®Ä¨");
-		name1.setLocation(30, 170);
-		name1.setSize(50, 30);
+		name1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name1.setLocation(30, 165);
+		name1.setSize(50, 34);
+		name1.setBorder(null);
+		name1.setBackground(new Color(217,229,255));
 		foodMenuM1.add(name1);
 		// °¡°Ý
 		JTextField price1 = new JTextField("1500¿ø");
-		price1.setLocation(80, 170);
-		price1.setSize(50, 30);
+		price1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
+		price1.setLocation(80, 165);
+		price1.setSize(50, 34);
+		price1.setBorder(null);
+		price1.setBackground(new Color(217,229,255));
 		foodMenuM1.add(price1);
 		// JButton »ý¼º
 		JButton button1 = new JButton("ÁÖ¹®ÇÏ±â");
+		button1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
 		button1.setLocation(30, 200);
-		button1.setSize(100, 30);
+		button1.setSize(100, 35);
+		button1.setForeground(Color.white);
+		button1.setBackground(new Color(3, 0, 102));
 		foodMenuM1.add(button1);
 
 		// foodMenuM2 JPanel »ý¼º
@@ -112,18 +132,27 @@ public class MainPage extends JPanel {
 		foodMenuM2.add(label2);
 		// °úÀÚÀÌ¸§
 		JTextField name2 = new JTextField("²¿±òÄÜ ");
-		name2.setLocation(30, 170);
-		name2.setSize(50, 30);
+		name2.setLocation(30, 165);
+		name2.setSize(50, 34);
+		name2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name2.setBorder(null);
+		name2.setBackground(new Color(217,229,255));
 		foodMenuM2.add(name2);
 		// °¡°Ý
 		JTextField price2 = new JTextField("1000¿ø");
-		price2.setLocation(80, 170);
-		price2.setSize(50, 30);
+		price2.setLocation(80, 165);
+		price2.setSize(50, 34);
+		price2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price2.setBorder(null);
+		price2.setBackground(new Color(217,229,255));
 		foodMenuM2.add(price2);
 		// JButton »ý¼º
 		JButton button2 = new JButton("ÁÖ¹®ÇÏ±â");
 		button2.setLocation(30, 200);
-		button2.setSize(100, 30);
+		button2.setSize(100, 35);
+		button2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		button2.setForeground(Color.white);
+		button2.setBackground(new Color(3, 0, 102));
 		foodMenuM2.add(button2);
 
 		// foodMenuM3 JPanel »ý¼º
@@ -140,19 +169,28 @@ public class MainPage extends JPanel {
 		foodMenuM3.add(label3);
 		// °úÀÚÀÌ¸§
 		JTextField name3 = new JTextField("²ÙÀÌ¸Ç");
-		name3.setLocation(30, 170);
-		name3.setSize(50, 30);
+		name3.setLocation(30, 165);
+		name3.setSize(50, 34);
+		name3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name3.setBackground(new Color(217,229,255));
+		name3.setBorder(null);
 		foodMenuM3.add(name3);
 		// °¡°Ý
 		JTextField price3 = new JTextField("800¿ø");
-		price3.setLocation(80, 170);
-		price3.setSize(50, 30);
+		price3.setLocation(80, 165);
+		price3.setSize(50, 34);
+		price3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price3.setBackground(new Color(217,229,255));
+		price3.setBorder(null);
 		foodMenuM3.add(price3);
 
 		// JButton »ý¼º
 		JButton button3 = new JButton("ÁÖ¹®ÇÏ±â");
 		button3.setLocation(30, 200);
-		button3.setSize(100, 30);
+		button3.setSize(100, 35);
+		button3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button3.setForeground(Color.white);
+		button3.setBackground(new Color(3, 0, 102));
 		foodMenuM3.add(button3);
 
 		// foodMenuM4 JPanel »ý¼º
@@ -169,18 +207,27 @@ public class MainPage extends JPanel {
 		foodMenuM4.add(label4);
 		// °úÀÚÀÌ¸§
 		JTextField name4 = new JTextField("²Ü²Ê¹è±â");
-		name4.setLocation(30, 170);
-		name4.setSize(50, 30);
+		name4.setLocation(23, 165);
+		name4.setSize(60, 34);
+		name4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name4.setBackground(new Color(217,229,255));
+		name4.setBorder(null);
 		foodMenuM4.add(name4);
 		// °¡°Ý
 		JTextField price4 = new JTextField("1500¿ø");
-		price4.setLocation(80, 170);
-		price4.setSize(50, 30);
+		price4.setLocation(82, 165);
+		price4.setSize(52, 34);
+		price4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price4.setBackground(new Color(217,229,255));
+		price4.setBorder(null);
 		foodMenuM4.add(price4);
 		// JButton »ý¼º
 		JButton button4 = new JButton("ÁÖ¹®ÇÏ±â");
 		button4.setLocation(30, 200);
-		button4.setSize(100, 30);
+		button4.setSize(100, 35);
+		button4.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button4.setForeground(Color.white);
+		button4.setBackground(new Color(3, 0, 102));
 		foodMenuM4.add(button4);
 
 		// foodMenuM5 JPanel »ý¼º
@@ -197,18 +244,27 @@ public class MainPage extends JPanel {
 		foodMenuM5.add(label5);
 		// °úÀÚÀÌ¸§
 		JTextField name5 = new JTextField("¼ô´Ù¸®");
-		name5.setLocation(30, 170);
-		name5.setSize(50, 30);
+		name5.setLocation(30, 165);
+		name5.setSize(50, 34);
+		name5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name5.setBackground(new Color(217,229,255));
+		name5.setBorder(null);
 		foodMenuM5.add(name5);
 		// °¡°Ý
 		JTextField price5 = new JTextField("1200¿ø");
-		price5.setLocation(80, 170);
-		price5.setSize(50, 30);
+		price5.setLocation(80, 165);
+		price5.setSize(50, 34);
+		price5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price5.setBorder(null);
+		price5.setBackground(new Color(217,229,255));
 		foodMenuM5.add(price5);
 		// JButton »ý¼º
 		JButton button5 = new JButton("ÁÖ¹®ÇÏ±â");
 		button5.setLocation(30, 200);
-		button5.setSize(100, 30);
+		button5.setSize(100, 35);
+		button5.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button5.setForeground(Color.white);
+		button5.setBackground(new Color(3, 0, 102));
 		foodMenuM5.add(button5);
 
 		// foodMenuM6 JPanel »ý¼º
@@ -225,18 +281,27 @@ public class MainPage extends JPanel {
 		foodMenuM6.add(label6);
 		// °úÀÚÀÌ¸§
 		JTextField name6 = new JTextField("¾ßÃ¤Å¸ÀÓ");
-		name6.setLocation(30, 170);
-		name6.setSize(50, 30);
+		name6.setLocation(25, 165);
+		name6.setSize(65, 34);
+		name6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name6.setBorder(null);
+		name6.setBackground(new Color(217,229,255));
 		foodMenuM6.add(name6);
 		// °¡°Ý
 		JTextField price6 = new JTextField("2000¿ø");
-		price6.setLocation(80, 170);
-		price6.setSize(50, 30);
+		price6.setLocation(90, 165);
+		price6.setSize(50, 34);
+		price6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price6.setBorder(null);
+		price6.setBackground(new Color(217,229,255));
 		foodMenuM6.add(price6);
 		// JButton »ý¼º
 		JButton button6 = new JButton("ÁÖ¹®ÇÏ±â");
 		button6.setLocation(30, 200);
-		button6.setSize(100, 30);
+		button6.setSize(100, 35);
+		button6.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button6.setForeground(Color.white);
+		button6.setBackground(new Color(3, 0, 102));
 		foodMenuM6.add(button6);
 
 		// foodMenuM7 JPanel »ý¼º
@@ -253,18 +318,27 @@ public class MainPage extends JPanel {
 		foodMenuM7.add(label7);
 		// °úÀÚÀÌ¸§
 		JTextField name7 = new JTextField("ÀÚÀ¯½Ã°£");
-		name7.setLocation(30, 170);
-		name7.setSize(50, 30);
+		name7.setLocation(25, 165);
+		name7.setSize(60, 34);
+		name7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name7.setBorder(null);
+		name7.setBackground(new Color(217,229,255));
 		foodMenuM7.add(name7);
 		// °¡°Ý
 		JTextField price7 = new JTextField("1000¿ø");
-		price7.setLocation(80, 170);
-		price7.setSize(50, 30);
+		price7.setLocation(85, 165);
+		price7.setSize(50, 34);
+		price7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price7.setBorder(null);
+		price7.setBackground(new Color(217,229,255));
 		foodMenuM7.add(price7);
 		// JButton »ý¼º
 		JButton button7 = new JButton("ÁÖ¹®ÇÏ±â");
 		button7.setLocation(30, 200);
-		button7.setSize(100, 30);
+		button7.setSize(100, 35);
+		button7.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button7.setForeground(Color.white);
+		button7.setBackground(new Color(3, 0, 102));
 		foodMenuM7.add(button7);
 
 		// foodMenuM8 JPanel »ý¼º
@@ -281,18 +355,27 @@ public class MainPage extends JPanel {
 		foodMenuM8.add(label8);
 		// °úÀÚÀÌ¸§
 		JTextField name8 = new JTextField("ÃÊÄÚ¼ÛÀÌ");
-		name8.setLocation(30, 170);
-		name8.setSize(50, 30);
+		name8.setLocation(25, 165);
+		name8.setSize(60, 34);
+		name8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name8.setBorder(null);
+		name8.setBackground(new Color(217,229,255));
 		foodMenuM8.add(name8);
 		// °¡°Ý
 		JTextField price8 = new JTextField("1000¿ø");
-		price8.setLocation(80, 170);
-		price8.setSize(50, 30);
+		price8.setLocation(85, 165);
+		price8.setSize(50, 34);
+		price8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price8.setBorder(null);
+		price8.setBackground(new Color(217,229,255));
 		foodMenuM8.add(price8);
 		// JButton »ý¼º
 		JButton button8 = new JButton("ÁÖ¹®ÇÏ±â");
 		button8.setLocation(30, 200);
-		button8.setSize(100, 30);
+		button8.setSize(100, 35);
+		button8.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button8.setForeground(Color.white);
+		button8.setBackground(new Color(3, 0, 102));
 		foodMenuM8.add(button8);
 
 		// foodMenuM9 JPanel »ý¼º
@@ -309,18 +392,27 @@ public class MainPage extends JPanel {
 		foodMenuM9.add(label9);
 		// °úÀÚÀÌ¸§
 		JTextField name9 = new JTextField("Ä­ÃÊ");
-		name9.setLocation(30, 170);
-		name9.setSize(50, 30);
+		name9.setLocation(30, 165);
+		name9.setSize(50, 34);
+		name9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name9.setBorder(null);
+		name9.setBackground(new Color(217,229,255));
 		foodMenuM9.add(name9);
 		// °¡°Ý
 		JTextField price9 = new JTextField("800¿ø");
-		price9.setLocation(80, 170);
-		price9.setSize(50, 30);
+		price9.setLocation(80, 165);
+		price9.setSize(50, 35);
+		price9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price9.setBorder(null);
+		price9.setBackground(new Color(217,229,255));
 		foodMenuM9.add(price9);
 		// JButton »ý¼º
 		JButton button9 = new JButton("ÁÖ¹®ÇÏ±â");
 		button9.setLocation(30, 200);
-		button9.setSize(100, 30);
+		button9.setSize(100, 35);
+		button9.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button9.setForeground(Color.white);
+		button9.setBackground(new Color(3, 0, 102));
 		foodMenuM9.add(button9);
 
 		// foodMenuM10 JPanel »ý¼º
@@ -337,18 +429,27 @@ public class MainPage extends JPanel {
 		foodMenuM10.add(label10);
 		// °úÀÚÀÌ¸§
 		JTextField name10 = new JTextField("È¨·±º¼");
-		name10.setLocation(30, 170);
-		name10.setSize(50, 30);
+		name10.setLocation(30, 165);
+		name10.setSize(50, 34);
+		name10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		name10.setBorder(null);
+		name10.setBackground(new Color(217,229,255));
 		foodMenuM10.add(name10);
 		// °¡°Ý
 		JTextField price10 = new JTextField("1200¿ø");
-		price10.setLocation(80, 170);
-		price10.setSize(50, 30);
+		price10.setLocation(80, 165);
+		price10.setSize(50, 34);
+		price10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		price10.setBorder(null);
+		price10.setBackground(new Color(217,229,255));
 		foodMenuM10.add(price10);
 		// JButton »ý¼º
 		JButton button10 = new JButton("ÁÖ¹®ÇÏ±â");
 		button10.setLocation(30, 200);
-		button10.setSize(100, 30);
+		button10.setSize(100, 35);
+		button10.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		button10.setForeground(Color.white);
+		button10.setBackground(new Color(3, 0, 102));
 		foodMenuM10.add(button10);
 
 //		JTextField order = new JTextField();
@@ -385,6 +486,9 @@ public class MainPage extends JPanel {
 				jlp1.setText(price1.getText());
 				jlp1.setPreferredSize(new Dimension(100, 30));
 				spinner1.setPreferredSize(new Dimension(80, 30));
+				jls1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls1);
 				orderM.add(jlp1);
 				orderM.add(spinner1);
@@ -409,6 +513,9 @@ public class MainPage extends JPanel {
 				jlp2.setText(price2.getText());
 				jlp2.setPreferredSize(new Dimension(100, 30));
 				spinner2.setPreferredSize(new Dimension(80, 30));
+				jls2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls2);
 				orderM.add(jlp2);
 				orderM.add(spinner2);
@@ -434,6 +541,9 @@ public class MainPage extends JPanel {
 				jlp3.setText(price3.getText());
 				jlp3.setPreferredSize(new Dimension(100, 30));
 				spinner3.setPreferredSize(new Dimension(80, 30));
+				jls3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls3);
 				orderM.add(jlp3);
 				orderM.add(spinner3);
@@ -459,6 +569,9 @@ public class MainPage extends JPanel {
 				jlp4.setText(price4.getText());
 				jlp4.setPreferredSize(new Dimension(100, 30));
 				spinner4.setPreferredSize(new Dimension(80, 30));
+				jls4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls4);
 				orderM.add(jlp4);
 				orderM.add(spinner4);
@@ -483,6 +596,9 @@ public class MainPage extends JPanel {
 				jlp5.setText(price5.getText());
 				jlp5.setPreferredSize(new Dimension(100, 30));
 				spinner5.setPreferredSize(new Dimension(80, 30));
+				jls5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls5);
 				orderM.add(jlp5);
 				orderM.add(spinner5);
@@ -507,6 +623,9 @@ public class MainPage extends JPanel {
 				jlp6.setText(price6.getText());
 				jlp6.setPreferredSize(new Dimension(100, 30));
 				spinner6.setPreferredSize(new Dimension(80, 30));
+				jls6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls6);
 				orderM.add(jlp6);
 				orderM.add(spinner6);
@@ -531,6 +650,9 @@ public class MainPage extends JPanel {
 				jlp7.setText(price5.getText());
 				jlp7.setPreferredSize(new Dimension(100, 30));
 				spinner7.setPreferredSize(new Dimension(80, 30));
+				jls7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls7);
 				orderM.add(jlp7);
 				orderM.add(spinner7);
@@ -539,30 +661,7 @@ public class MainPage extends JPanel {
 				button7.setEnabled(false);
 				text.setText("ÀÚÀ¯½Ã°£ÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù.");
 			}
-		});
-		button7.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JLabel jls7 = new JLabel();
-				JLabel jlp7 = new JLabel();
-				SpinnerNumberModel numberModel7 = new SpinnerNumberModel(1, 0, 9, 1);
-				JSpinner spinner7 = new JSpinner(numberModel7);
-				splist.add(spinner7);
-				selectedProduct.add(new Product("ÀúÀ¯½Ã°£", 1000));
-				jls7.setText(name7.getText());
-				jls7.setPreferredSize(new Dimension(100, 30));
-				jlp7.setText(price7.getText());
-				jlp7.setPreferredSize(new Dimension(100, 30));
-				spinner7.setPreferredSize(new Dimension(80, 30));
-				orderM.add(jls7);
-				orderM.add(jlp7);
-				orderM.add(spinner7);
-				orderM.revalidate();
-				orderM.repaint();
-				button7.setEnabled(false);
-				text.setText("ÀÚÀ¯½Ã°£ÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù.");
-			}
 		});
 		button8.addActionListener(new ActionListener() {
 
@@ -579,6 +678,9 @@ public class MainPage extends JPanel {
 				jlp8.setText(price8.getText());
 				jlp8.setPreferredSize(new Dimension(100, 30));
 				spinner8.setPreferredSize(new Dimension(80, 30));
+				jls8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls8);
 				orderM.add(jlp8);
 				orderM.add(spinner8);
@@ -603,6 +705,9 @@ public class MainPage extends JPanel {
 				jlp9.setText(price9.getText());
 				jlp9.setPreferredSize(new Dimension(100, 30));
 				spinner9.setPreferredSize(new Dimension(80, 30));
+				jls9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls9);
 				orderM.add(jlp9);
 				orderM.add(spinner9);
@@ -627,6 +732,9 @@ public class MainPage extends JPanel {
 				jlp10.setText(price10.getText());
 				jlp10.setPreferredSize(new Dimension(100, 30));
 				spinner10.setPreferredSize(new Dimension(80, 30));
+				jls10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				jlp10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+				spinner10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
 				orderM.add(jls10);
 				orderM.add(jlp10);
 				orderM.add(spinner10);
@@ -636,10 +744,55 @@ public class MainPage extends JPanel {
 				text.setText("È¨·±º¼ÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù.");
 			}
 		});
+		
+		 JButton back = new JButton();	
+		 back.setLocation(710, 30);
+		 back.setSize(60, 50);
+		 back.setIcon(img);
+		 back.setBackground(Color.white);
+		 back.setBorderPainted(false);
+		
 
-		JButton reset = new JButton("ÃÊ±âÈ­");
-		reset.setLocation(645, 30);
-		reset.setSize(200, 50);
+		JLabel orderB1 = new JLabel("      ÃÑ °áÁ¦±Ý¾× : ");
+		orderB1.setLocation(860, 340);
+		orderB1.setSize(250, 50);
+		orderB1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25 ));
+		orderB1.setForeground(Color.white);
+
+		JTextField orderB2 = new JTextField();
+		orderB2.setLocation(1080, 340);
+		orderB2.setSize(150, 50);
+		orderB2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20 ));
+		
+
+
+
+
+		JButton orderT = new JButton("ÁÖ¹®°áÁ¤ÇÏ±â");
+		orderT.setLocation(860, 30);
+		orderT.setSize(370, 50);
+		orderT.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
+		orderT.setBackground(new Color(217, 229, 255));
+
+		orderT.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+
+				Product p = new Product();
+				int sum = 0;
+				for (int i = 0; i < selectedProduct.size(); i++) {
+					sum += selectedProduct.get(i).getPrice() * (int) splist.get(i).getValue();
+					orderB2.setText(sum + "");
+				}
+			}
+		});
+		
+		JButton reset = new JButton();
+		reset.setLocation(785,30);
+		reset.setSize(60, 50);
+		reset.setIcon(img1);
+		reset.setBackground(Color.white);
+		reset.setBorderPainted(false);
+		
 
 		reset.addActionListener(new ActionListener() {
 
@@ -659,62 +812,58 @@ public class MainPage extends JPanel {
 				button8.setEnabled(true);
 				button9.setEnabled(true);
 				button10.setEnabled(true);
+				orderB2.remove(text);
+				orderB2.revalidate();
+				orderB2.repaint();
 
 			}
-		});
-
-
-		JTextField orderB1 = new JTextField("ÃÑ ÁÖ¹®±Ý¾×");
-		orderB1.setLocation(860, 340);
-		orderB1.setSize(250, 50);
-
-		JTextField orderB2 = new JTextField("~¿ø");
-		orderB2.setLocation(1115, 340);
-		orderB2.setSize(115, 50);
-
-		JButton orderT = new JButton("ÁÖ¹®°áÁ¤ÇÏ±â");
-		orderT.setLocation(860, 30);
-		orderT.setSize(370, 50);
-		
-		orderT.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				Product p = new Product();
-				int sum = 0;
-				for(JSpinner j : splist) {
-				    for(Product p1 : selectedProduct) {
-					int price =  p1.getPrice() * (int)j.getValue();
-					sum += price;	
-					orderB2.setText("" + sum);
-					
-					}
-				} 
-			}
-		
 		});
 		
 //		JTextField bill = new JTextField();
 //		bill.setLocation(860, 320);
 //		bill.setSize(370,180);
-
+		JPanel bill = new JPanel();
+		
 		JButton billInfor = new JButton("°áÁ¦Á¤º¸");
 		billInfor.setLocation(860, 400);
 		billInfor.setSize(370, 50);
+		billInfor.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 18 ));
+		billInfor.setBackground(new Color(217,229,255));
 
-		JButton billCash = new JButton("Çö±Ý");
+		JRadioButton billCash = new JRadioButton("Çö±Ý");
 		billCash.setLocation(860, 455);
 		billCash.setSize(110, 50);
-
-		JButton billCard = new JButton("Ä«µå");
+		billCash.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		JRadioButton billCard = new JRadioButton("Ä«µå");
 		billCard.setLocation(990, 455);
 		billCard.setSize(110, 50);
-
-		JButton billKakao = new JButton("Ä«Ä«¿ÀÆäÀÌ");
+		billCard.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15 ));
+		JRadioButton billKakao = new JRadioButton("Ä«Ä«¿ÀÆäÀÌ");
 		billKakao.setLocation(1120, 455);
 		billKakao.setSize(110, 50);
-
+		billKakao.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
+		ButtonGroup sizeGroup = new ButtonGroup();
+		sizeGroup.add(billCash);
+		sizeGroup.add(billCard);
+		sizeGroup.add(billKakao);
+		/*
+		 * JButton billCash = new JButton("Çö±Ý");
+		 *  billCash.setLocation(860, 455);
+		 * billCash.setSize(110, 50);
+		 * 
+		 * JButton billCard = new JButton("Ä«µå"); 
+		 * billCard.setLocation(990, 455);
+		 * billCard.setSize(110, 50);
+		 * 
+		 * JButton billKakao = new JButton("Ä«Ä«¿ÀÆäÀÌ"); 
+		 * billKakao.setLocation(1120, 455);
+		 * billKakao.setSize(110, 50);
+		 */
+	
 		JTextField call = new JTextField("¿äÃ»»çÇ×Àº 50ÀÚ ÀÌ³»·Î ÀÛ¼ºÇØÁÖ¼¼¿ä");
-		call.setLocation(860, 515);
-		call.setSize(370, 30);
+		call.setLocation(860, 515); call.setSize(370, 30);
+		call.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15 ));
+		
 
 		call.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -727,15 +876,30 @@ public class MainPage extends JPanel {
 		pay.setBackground(Color.yellow);
 		pay.setLocation(860, 560);
 		pay.setSize(370, 60);
-
+		pay.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20 ));
+		
 		pay.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "ÁÖ¹®ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+				
+				if (billCash.isSelected()) {
+					JOptionPane.showMessageDialog(null, "Çö±ÝÀ¸·Î ÁÖ¹®ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.", "ÁÖ¹®", JOptionPane.INFORMATION_MESSAGE);
+				} else if (billCard.isSelected()) {
+					JOptionPane.showMessageDialog(null, "Ä«µåÀ¸·Î ÁÖ¹®ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.", "ÁÖ¹®", JOptionPane.INFORMATION_MESSAGE);
+				} else if (billKakao.isSelected()){
+					JOptionPane.showMessageDialog(null, "Ä«Ä«¿ÀÆäÀÌÀ¸·Î ÁÖ¹®ÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.", "ÁÖ¹®",
+							JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "°áÁ¦ ¼ö´ÜÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.", "ÁÖ¹®",
+							JOptionPane.INFORMATION_MESSAGE);
+					
+					
+			
+				}
 			}
 		});
 
-		this.add(foodMenuT);
+		this.add(name);
 		// mf.add(foodMenuM);
 		this.add(foodMenuM1);
 		this.add(foodMenuM2);
@@ -747,6 +911,7 @@ public class MainPage extends JPanel {
 		this.add(foodMenuM8);
 		this.add(foodMenuM9);
 		this.add(foodMenuM10);
+		this.add(back);
 		this.add(reset);
 		// mf.add(order);
 		this.add(orderT);
