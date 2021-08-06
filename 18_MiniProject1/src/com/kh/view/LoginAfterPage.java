@@ -178,7 +178,7 @@ public class LoginAfterPage extends JPanel{
 		JPanel rightPanel = new JPanel();
 		rightPanel.setPreferredSize(new Dimension(400, 720));
 		rightPanel.setBackground(Color.gray);
-		Image icon = new ImageIcon("image/raccoon.jpg").getImage().getScaledInstance(340, 520, 0);
+		Image icon = new ImageIcon("icon/raccoon.jpg").getImage().getScaledInstance(340, 520, 0);
 		// JLabel 생성하여 Image 설정
 		JLabel label = new JLabel(new ImageIcon(icon));
 		rightPanel.add(label);
