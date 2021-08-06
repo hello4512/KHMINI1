@@ -8,25 +8,30 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.kh.test.common.ChangePanel;
-
-
+import com.kh.test.model.dao.MemberDao;
+import com.kh.test.model.vo.PcMember;
 
 
 
 public class Login extends JPanel{
 	private MainFrame mfr;
 	private JPanel login;
+	private MemberDao a = new MemberDao();
+	private ArrayList<PcMember> list = new ArrayList<>();
+	private static JTextField IdArea;
+	
 	
 	public Image bg = new ImageIcon("icon/bg.jpg").getImage();
 	
@@ -34,7 +39,7 @@ public class Login extends JPanel{
 		g.drawImage(bg, 0, 0, 1280, 720, null);
 	}
 	
-	public Login(MainFrame mf) {
+	public Login(MainFrame mf) {		
 		this.mfr = mf;
 		this.login = this;
 			
@@ -204,6 +209,25 @@ public class Login extends JPanel{
 		findArea.add(SearchResult);
 		dialog.add(findArea);
 		
+		LoginBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(IdArea.getText().equals(list.get(i).getUserId()) &&
+		    		PwArea.getText().equals(list.get(i).getUserPw())) {
+		    			value = i;
+		    		}
+		    	}
+		    	System.out.println(PwArea.getText());
+		    	if(value >= 0) {
+		    		JOptionPane.showMessageDialog(null, "로그인 성공", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
+					//ChangePanel.changePanel(mfr, login, new (mf));
+		    	}else {
+		    		JOptionPane.showMessageDialog(null, "로그인 실패", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
+		    	}
+			}			
+		});
 		
 		JoinBtn.addActionListener(new ActionListener() {
 			@Override
@@ -212,10 +236,29 @@ public class Login extends JPanel{
 			}			
 		});
 
+		//TEST		
+		//	id, 이름, pw, 생년월일, 성별, 핸드폰, 이메일
+		list = a.fileOpen();	//	먼저 파일 오픈
+//		테스트로 미리 생성
+//		list.add(new PcMember("admin1", "관리자", "pass", 1, '성', "0101234", "1"));
+//		list.add(new PcMember("admin2", "관리자", "pass", 1, '성', "0102345", "2"));
+//		list.add(new PcMember("admin3", "관리자", "pass", 1, '성', "0103456", "3"));
+//		list.add(new PcMember("admin4", "관리자", "pass", 1, '성', "0104567", "4"));
+		a.fileSave(list);
+		System.out.println("리스트 확인");
+		System.out.println(list);
+		
 		SearchId_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	if(InputName.getText().equals("이름 입력")) {	//	회원 정보 가져오기
-		    		SearchResult.setText("이름" + "님의 아이디는 " + "아이디" + " 입니다.");
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(InputName.getText().equals(list.get(i).getUserName()) &&
+		    		InputEmail.getText().equals(list.get(i).getUserEmail())) {
+		    			value = i;
+		    		}
+		    	}
+		    	if(value >= 0) {
+		    		SearchResult.setText(list.get(value).getUserName() + "님의 아이디는 " + list.get(value).getUserId() + " 입니다.");
 		    		SearchResult.setForeground(Color.BLUE);
 		    	}else {
 		    		SearchResult.setText("일치하는 정보가 없습니다.");
@@ -225,8 +268,16 @@ public class Login extends JPanel{
 		});
 		SearchPw_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	if(InputID.getText().equals("아이디 입력")) {	//	회원 정보 가져오기
-		    		SearchResult.setText("아이디" + "님의 비밀번호는 " + "qweasd456" + " 입니다.");
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(InputID.getText().equals(list.get(i).getUserId()) &&
+		    		InputPhone.getText().equals(list.get(i).getUserPhone())) {
+		    			value = i;
+		    		}
+		    	}
+		    	System.out.println(value);
+		    	if(value >= 0) {
+		    		SearchResult.setText(list.get(value).getUserId() + "님의 비밀번호는 " + list.get(value).getUserPw() + " 입니다.");
 		    		SearchResult.setForeground(Color.BLUE);
 		    	}else {
 		    		SearchResult.setText("일치하는 정보가 없습니다.");

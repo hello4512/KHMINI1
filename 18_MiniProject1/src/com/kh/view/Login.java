@@ -115,6 +115,7 @@ public class Login extends JPanel{
 		PwLabel.setLocation(0, 50);
 		NumLabel.setSize(100, 30);
 		NumLabel.setLocation(0, 90);
+		NumArea.setEnabled(false);
 
 		IdArea.setSize(150, 30);
 		IdArea.setLocation(100, 10);
