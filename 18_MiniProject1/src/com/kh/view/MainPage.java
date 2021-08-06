@@ -154,7 +154,6 @@ public class MainPage extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(no1.isSelected() && no2.isSelected() && yes3.isSelected()) {
-					JOptionPane.showMessageDialog(null, "선불 결제 화면으로 넘어갑니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, mainPage, new PaymentScreen(mf));
 				} else {
 					JOptionPane.showMessageDialog(null, "방역수칙에 위반되거나 개인정보 수집에 동의하지 않아 이용하실 수 없습니다.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);

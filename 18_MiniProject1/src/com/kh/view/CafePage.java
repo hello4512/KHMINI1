@@ -1,4 +1,4 @@
-package com.kh.menu.view;
+package com.kh.view;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
-import com.kh.menu.model.vo.Product;
+import com.kh.model.vo.Product;
 
 public class CafePage extends JPanel {
 	protected static final Component scroller = null;

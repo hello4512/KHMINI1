@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,8 +25,14 @@ import com.kh.common.ChangePanel;
 public class PaymentScreen extends JPanel{
 	private MainFrame mfr;
 	private JPanel paymentScreen;
-	private BufferedImage img; 
 
+	// 코로나 예방수칙 배경 설정
+	ImageIcon bg = new ImageIcon("icon/lol.jpg");
+	public void paintComponent(Graphics g) {
+		Dimension d = getSize();
+		g.drawImage(bg.getImage(), 0, 0, d.width, d.height, null);
+	}
+	
 	public PaymentScreen(MainFrame mf) {
 		this.mfr = mf;
 		this.paymentScreen = this;
@@ -33,8 +40,8 @@ public class PaymentScreen extends JPanel{
 		// 자리선택 버튼
 		JButton seatbtn = new JButton("자리선택");
 		seatbtn.setFocusPainted(false);
-		seatbtn.setPreferredSize(new Dimension(180, 50));
-		seatbtn.setBackground(Color.pink);
+		seatbtn.setPreferredSize(new Dimension(180, 80));
+		seatbtn.setBackground(Color.magenta);
 		seatbtn.setFont(new Font("고딕", Font.BOLD, 30));
 
 		// 총 시간 및 금액 라벨 
@@ -66,27 +73,19 @@ public class PaymentScreen extends JPanel{
 
 		//오른쪽 패널
 		JPanel rightPanel = new JPanel();
-		rightPanel.setPreferredSize(new Dimension(200, 320));
+		rightPanel.setPreferredSize(new Dimension(200, 400));
 		rightPanel.setBackground(new Color(0, 0, 0, 0));
-		
-		try {
-			img =  ImageIO.read(new File("icon/lol.jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		
 		rightPanel.add(seatbtn);  
 		rightPanel.add(lb);   // 금액 라벨
 		rightPanel.add(tlabel);
-		//rightPanel.add(ta);
 		rightPanel.add(paymentbtn); 
 		
 		// 전체 패널
-		MyPanel page = new MyPanel();
-		page.add(leftPanel); 
-		page.add(rightPanel);  
+	
+		this.add(leftPanel); 
+		this.add(rightPanel);  
  
-		this.add(page);  // 전체 패널 프레임에 올리기
 		
 		// 아래부터 그리드 레이아웃 내용 구성
 		JLabel lb1 = new JLabel("회원요금");
@@ -501,6 +500,7 @@ public class PaymentScreen extends JPanel{
 			}
 		});
 		
+		//자리선택 버튼 눌렀을 때 이벤트
 		seatbtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -509,6 +509,7 @@ public class PaymentScreen extends JPanel{
 			}
 		});
 		
+		//결제하기 버튼 눌렀을 때 이벤트
 		paymentbtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -519,12 +520,6 @@ public class PaymentScreen extends JPanel{
 		});
 	}
 	
-	 private class MyPanel extends JPanel{
-		 
-	        protected void paintComponent(Graphics g) {
-	            super.paintComponent(g);
-	            g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
-	        }
-	    }
+	
 
 }

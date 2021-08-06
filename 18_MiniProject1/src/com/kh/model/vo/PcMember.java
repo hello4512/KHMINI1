@@ -11,7 +11,7 @@ public class PcMember implements Serializable{
 	private String userPw;		// 비밀번호
 	private int userBirth;		// 생년월일
 	private char gender;		// 성별
-	private String userPhone;		// 핸드폰번호
+	private String userPhone;	// 핸드폰번호
 	private String userEmail;	// 이메일
 	
 	public PcMember() {}
@@ -83,6 +83,12 @@ public class PcMember implements Serializable{
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	
+	@Override
+	public String toString() {
+		return "\nPcMember [userId=" + userId + ", userName=" + userName + ", userPw=" + userPw + ", userBirth="
+				+ userBirth + ", gender=" + gender + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -136,9 +142,4 @@ public class PcMember implements Serializable{
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "\nPcMember [userId=" + userId + ", userName=" + userName + ", userPw=" + userPw + ", userBirth="
-				+ userBirth + ", gender=" + gender + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
-	}
 }
