@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,10 +20,15 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.kh.common.ChangePanel;
+import com.kh.controller.MemberController;
+import com.kh.model.dao.MemberDao;
+import com.kh.model.vo.PcMember;
 
 public class Login extends JPanel{
 	private MainFrame mfr;
 	private JPanel login;
+	private MemberDao a = new MemberDao();
+	private ArrayList<PcMember> list = new ArrayList<>();
 	
 	public Image bg = new ImageIcon("icon/bg.jpg").getImage();
 	
@@ -30,7 +36,7 @@ public class Login extends JPanel{
 		g.drawImage(bg, 0, 0, 1280, 720, null);
 	}
 	
-	public Login(MainFrame mf) {
+	public Login(MainFrame mf) {		
 		this.mfr = mf;
 		this.login = this;
 			
@@ -208,10 +214,27 @@ public class Login extends JPanel{
 			}			
 		});
 
+		//TEST		
+		//	id, 이름, pw, 생년월일, 성별, 핸드폰, 이메일
+		list = a.fileOpen();	//	먼저 파일 오픈
+//		list.add(new PcMember("admin1", "관리자", "pass", 1, '성', 2, "1"));
+//		list.add(new PcMember("admin2", "관리자", "pass", 1, '성', 2, "2"));
+//		list.add(new PcMember("admin3", "관리자", "pass", 1, '성', 2, "3"));
+//		list.add(new PcMember("admin4", "관리자", "pass", 1, '성', 2, "4"));
+		a.fileSave(list);
+		
 		SearchId_btn.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
-		    	if(InputName.getText().equals("이름 입력")) {	//	회원 정보 가져오기
-		    		SearchResult.setText("이름" + "님의 아이디는 " + "아이디" + " 입니다.");
+		    	System.out.println(list);
+		    	int value = -1;
+		    	for(int i = 0; i < list.size(); i++) {
+		    		if(InputName.getText().equals(list.get(i).getUserName()) &&
+		    		InputEmail.getText().equals(list.get(i).getUserEmail())) {
+		    			value = i;
+		    		}
+		    	}
+		    	if(value >= 0) {
+		    		SearchResult.setText(list.get(value).getUserName() + "님의 아이디는 " + list.get(value).getUserId() + " 입니다.");
 		    		SearchResult.setForeground(Color.BLUE);
 		    	}else {
 		    		SearchResult.setText("일치하는 정보가 없습니다.");

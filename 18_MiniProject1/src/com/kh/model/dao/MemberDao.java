@@ -20,7 +20,7 @@ public class MemberDao {
 		ArrayList<PcMember> list = new ArrayList<>();
 		
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-			list = (ArrayList<PcMember>)ois.readObject();
+			list = (ArrayList<PcMember>) ois.readObject();
 			
 		} catch (IOException e) {
 //			e.printStackTrace();

@@ -135,7 +135,10 @@ public class PcMember implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "PcMember [userId=" + userId + ", userName=" + userName + ", userPw=" + userPw + ", userBirth="
+				+ userBirth + ", gender=" + gender + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
+	}
 }
