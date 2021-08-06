@@ -41,11 +41,11 @@ public class PaymentScreen extends JPanel{
 		JButton seatbtn = new JButton("자리선택");
 		seatbtn.setFocusPainted(false);
 		seatbtn.setPreferredSize(new Dimension(180, 80));
-		seatbtn.setBackground(Color.magenta);
+		seatbtn.setBackground(Color.gray);
 		seatbtn.setFont(new Font("고딕", Font.BOLD, 30));
 
 		// 총 시간 및 금액 라벨 
-		JLabel lb = new JLabel("총 시간 및 금액");
+		JLabel lb = new JLabel("결제 종류");
 		lb.setHorizontalAlignment(JLabel.CENTER); //라벨 글자 가운데 정렬
 		lb.setPreferredSize(new Dimension(180, 50));
 		lb.setOpaque(true);
