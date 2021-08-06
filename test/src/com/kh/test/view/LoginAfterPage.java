@@ -7,8 +7,6 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -22,21 +20,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.kh.test.common.ChangePanel;
-
-
-
-
+import com.kh.test.model.vo.PcMember;
 
 public class LoginAfterPage extends JPanel{
 	private MainFrame mfr;
 	private JPanel loginafterpage;
 	private Image img;
-	private Timer timer = new Timer();
-	
-	
+		
 	public LoginAfterPage(MainFrame mf) {
 		this.mfr = mf;
 		this.loginafterpage = this;
+		
+		Login lo = new Login(mf);
+		PcMember pm = new PcMember();
+		Seat se = new Seat(mf);
 		
 		// 로그인 후 화면
 		
@@ -46,7 +43,7 @@ public class LoginAfterPage extends JPanel{
 		upPanel.setBackground(Color.darkGray);
 			
 		// JLabel "no."
-		JLabel nojl = new JLabel("no."/*OO 입니다*/);
+		JLabel nojl = new JLabel("no." /*OO 입니다*/);
 		upPanel.add(nojl);
 		nojl.setFont(new Font("고딕", Font.BOLD, 30));
 		nojl.setForeground(Color.white);
@@ -83,8 +80,13 @@ public class LoginAfterPage extends JPanel{
 		leftPanel.add(upPanel);
 		leftPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 				
+		// 개행용 JLabel
+		JLabel jl1 = new JLabel();
+		leftPanel.add(jl1);
+		jl1.setPreferredSize(new Dimension(1000, 60));
+		
 		// leftPanel JLabel ID 
-		JLabel info = new JLabel("ID : ");
+		JLabel info = new JLabel("ID : " + pm.getUserId());
 		leftPanel.add(info);
 		info.setFont(new Font("고딕", Font.BOLD, 30));
 		info.setForeground(Color.white);
@@ -92,12 +94,12 @@ public class LoginAfterPage extends JPanel{
 		
 		
 		// leftPanel JLabel 회원등급
-		JLabel rank = new JLabel("회원등급 : ");
+		/*JLabel rank = new JLabel("회원등급 : ");
 		leftPanel.add(rank);
 		rank.setFont(new Font("고딕", Font.BOLD, 30));
 		rank.setForeground(Color.white);
 		rank.setPreferredSize(new Dimension(800, 80));
-
+		*/
 		// Calendar
 		Calendar cal = Calendar.getInstance();
 		cal.setTimeInMillis(System.currentTimeMillis());
@@ -105,10 +107,30 @@ public class LoginAfterPage extends JPanel{
 		Calendar cal2 = Calendar.getInstance();
 		cal2.setTimeInMillis(System.currentTimeMillis() + 1000 * 60 * 6);
 		
+		// Timer
+		Timer timer = new Timer();
 		
+		TimerTask task = new TimerTask() {
+
+			@Override
+			public void run() {
+				System.out.println("Task is complete :)");
+			}			
+		};
+		Calendar date = Calendar.getInstance();
+		date.set(Calendar.YEAR,2020);
+		date.set(Calendar.MONTH,Calendar.JUNE);
+		date.set(Calendar.DAY_OF_MONTH,20);
+		date.set(Calendar.HOUR_OF_DAY,0);
+		date.set(Calendar.MINUTE,0);
+		date.set(Calendar.SECOND,0);
+		date.set(Calendar.MILLISECOND,0);
 		
+		timer.schedule(task, date.getTime());
+		
+				
 		// leftPanel JLabel 남은시간
-		JLabel time = new JLabel("남은시간 : " + cal.get(Calendar.MINUTE));
+		JLabel time = new JLabel("남은시간 : "/*cal.get(Calendar.MINUTE)*/);
 		leftPanel.add(time);
 		time.setFont(new Font("고딕", Font.BOLD, 60));
 		time.setForeground(Color.white);
@@ -175,7 +197,7 @@ public class LoginAfterPage extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "메뉴 주문 페이지로 이동합니다.", "메뉴 주문", JOptionPane.PLAIN_MESSAGE);
-				ChangePanel.changePanel(mfr, loginafterpage, new MainPage(mf));
+				ChangePanel.changePanel(mfr, loginafterpage, new CafePage(mf));
 			}
 		});
 		
@@ -183,6 +205,10 @@ public class LoginAfterPage extends JPanel{
 		this.add(leftPanel);
 		this.add(rightPanel);
 		mf.add(this);
+	}
+	
+	public void Time() {
+		
 	}
 		
 }
