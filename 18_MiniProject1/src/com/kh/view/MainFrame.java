@@ -3,7 +3,8 @@ package com.kh.view;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
-	public static int SeatNumber;		//	좌석 번호	
+	public static int SeatNumber;	//	좌석 번호	
+	public static String getLoginID;	//	로그인 된 아이디 값
 	
 	public MainFrame() {
 		super("PC방 프로그램");

@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
@@ -20,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.kh.common.ChangePanel;
+import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.PcMember;
 
 public class LoginAfterPage extends JPanel{
@@ -43,7 +45,7 @@ public class LoginAfterPage extends JPanel{
 		upPanel.setBackground(Color.darkGray);
 			
 		// JLabel "no."
-		JLabel nojl = new JLabel("no." /*OO ÀÔ´Ï´Ù*/);
+		JLabel nojl = new JLabel("no. "+ mfr.SeatNumber);	//	ÁÂ¼® ¹øÈ£ °¡Á®¿À±â
 		upPanel.add(nojl);
 		nojl.setFont(new Font("°íµñ", Font.BOLD, 30));
 		nojl.setForeground(Color.white);
@@ -86,7 +88,7 @@ public class LoginAfterPage extends JPanel{
 		jl1.setPreferredSize(new Dimension(1000, 60));
 		
 		// leftPanel JLabel ID 
-		JLabel info = new JLabel("ID : " + pm.getUserId());
+		JLabel info = new JLabel("ID : " + mfr.getLoginID);
 		leftPanel.add(info);
 		info.setFont(new Font("°íµñ", Font.BOLD, 30));
 		info.setForeground(Color.white);
