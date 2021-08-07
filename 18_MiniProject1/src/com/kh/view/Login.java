@@ -214,9 +214,9 @@ public class Login extends JPanel{
 		    		if(IdArea.getText().equals(list.get(i).getUserId()) &&
 		    		PwArea.getText().equals(list.get(i).getUserPw())) {
 		    			value = i;
+		    			mfr.getValue = value;
 		    		}
 		    	}
-		    	System.out.println(PwArea.getText());
 		    	if(value >= 0) {
 		    		JOptionPane.showMessageDialog(null, "로그인 성공", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, login, new LoginAfterPage(mf));
