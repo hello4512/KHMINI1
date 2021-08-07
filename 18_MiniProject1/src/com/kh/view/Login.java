@@ -116,6 +116,7 @@ public class Login extends JPanel{
 		NumLabel.setSize(100, 30);
 		NumLabel.setLocation(0, 90);
 		NumArea.setEnabled(false);
+		NumArea.setBackground(Color.DARK_GRAY);
 
 		IdArea.setSize(150, 30);
 		IdArea.setLocation(100, 10);
@@ -206,6 +207,12 @@ public class Login extends JPanel{
 		findArea.add(SearchResult);
 		dialog.add(findArea);
 		
+		NumArea.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent e) {
+		    	JOptionPane.showMessageDialog(null, "중국의 코로나로 인해 당분간\n비회원 사용을 금지합니다.", "MINI1 PC", JOptionPane.ERROR_MESSAGE);		    	
+		    }
+		});
+		
 		LoginBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -214,7 +221,7 @@ public class Login extends JPanel{
 		    		if(IdArea.getText().equals(list.get(i).getUserId()) &&
 		    		PwArea.getText().equals(list.get(i).getUserPw())) {
 		    			value = i;
-		    			mfr.getValue = value;
+		    			mfr.getLoginID = list.get(value).getUserId();
 		    		}
 		    	}
 		    	if(value >= 0) {

@@ -28,11 +28,8 @@ public class LoginAfterPage extends JPanel{
 	private MainFrame mfr;
 	private JPanel loginafterpage;
 	private Image img;
-	private MemberDao a = new MemberDao();
-	private ArrayList<PcMember> list = new ArrayList<>();
 		
 	public LoginAfterPage(MainFrame mf) {
-		list = a.fileOpen();
 		this.mfr = mf;
 		this.loginafterpage = this;
 		
@@ -40,7 +37,6 @@ public class LoginAfterPage extends JPanel{
 		PcMember pm = new PcMember();
 		Seat se = new Seat(mf);
 		
-		a.fileOpen();
 		// 로그인 후 화면
 		
 		// up JPanel
@@ -92,7 +88,7 @@ public class LoginAfterPage extends JPanel{
 		jl1.setPreferredSize(new Dimension(1000, 60));
 		
 		// leftPanel JLabel ID 
-		JLabel info = new JLabel("ID : " + list.get(mfr.getValue).getUserId());
+		JLabel info = new JLabel("ID : " + mfr.getLoginID);
 		leftPanel.add(info);
 		info.setFont(new Font("고딕", Font.BOLD, 30));
 		info.setForeground(Color.white);
