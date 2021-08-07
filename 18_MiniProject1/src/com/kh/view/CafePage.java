@@ -745,12 +745,12 @@ public class CafePage extends JPanel {
 			}
 		});
 		
-		 JButton back = new JButton();	
-		 back.setLocation(710, 30);
-		 back.setSize(60, 50);
-		 back.setIcon(img);
-		 back.setBackground(Color.white);
-		 back.setBorderPainted(false);
+//		 JButton back = new JButton();	
+//		 back.setLocation(710, 30);
+//		 back.setSize(60, 50);
+//		 back.setIcon(img);
+//		 back.setBackground(Color.white);
+//		 back.setBorderPainted(false);
 		
 
 		JLabel orderB1 = new JLabel("      ÃÑ °áÁ¦±Ý¾× : ");
@@ -912,7 +912,7 @@ public class CafePage extends JPanel {
 		this.add(foodMenuM8);
 		this.add(foodMenuM9);
 		this.add(foodMenuM10);
-		this.add(back);
+//		this.add(back);
 		this.add(reset);
 		// mf.add(order);
 		this.add(orderT);
