@@ -1,4 +1,4 @@
-package com.kh.test.view;
+package com.kh.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,30 +10,38 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.kh.test.common.ChangePanel;
-import com.kh.test.model.vo.Product;
+import com.kh.common.ChangePanel;
+import com.kh.model.vo.Product;
+
+
 
 public class ManagerPage extends JPanel {
 	private MainFrame mfr;
 	private JPanel managerpage;
 	private Image img;
+	private List<JSpinner> splist = new ArrayList<>();
+	private List<Product> selectedProduct = new ArrayList<>();
 
 	public ManagerPage(MainFrame mf) {
 		this.mfr = mf;
 		this.managerpage = this;
 
 		Product pd = new Product();
+		CafePage cp = new CafePage(mf);
 		
 		// °ü¸®ÀÚ È­¸é
-
+		
 		// out JPanel ¹ÙÅÁÈ­¸é
 		JPanel outPanel = new JPanel();
 		outPanel.setPreferredSize(new Dimension(1280, 720));
@@ -56,13 +64,13 @@ public class ManagerPage extends JPanel {
 		// jmjl.setLayout(new FlowLayout(FlowLayout.CENTER));
 
 		// ÁÖ¹®¸ñ·Ï JLabel
-		JLabel menujl1 = new JLabel("¸Þ´º : " + pd.getProductName());
+		JLabel menujl1 = new JLabel("¸Þ´º : " + mfr.menu);
 		inPanel.add(menujl1);
 		menujl1.setPreferredSize(new Dimension(300, 120));
 		menujl1.setFont(new Font("°íµñ", Font.BOLD, 20));
 
 		// ÁÖ¹®°¹¼ö JLabel
-		JLabel menujl2 = new JLabel("°¹¼ö : " + pd.getPrice());
+		JLabel menujl2 = new JLabel("°¹¼ö : " + mfr.menunum);
 		inPanel.add(menujl2);
 		menujl2.setPreferredSize(new Dimension(300, 120));
 		menujl2.setFont(new Font("°íµñ", Font.BOLD, 20));

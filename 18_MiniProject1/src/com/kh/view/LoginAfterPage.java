@@ -1,5 +1,8 @@
 package com.kh.view;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -12,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
-import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,12 +26,15 @@ import com.kh.common.ChangePanel;
 import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.PcMember;
 
-public class LoginAfterPage extends JPanel{
+public class LoginAfterPage extends JPanel implements ActionListener{
 	private MainFrame mfr;
 	private JPanel loginafterpage;
 	private Image img;
+	private MemberDao a = new MemberDao();
+	private ArrayList<PcMember> list = new ArrayList<>();
 		
 	public LoginAfterPage(MainFrame mf) {
+		list = a.fileOpen();
 		this.mfr = mf;
 		this.loginafterpage = this;
 		
@@ -37,6 +42,7 @@ public class LoginAfterPage extends JPanel{
 		PcMember pm = new PcMember();
 		Seat se = new Seat(mf);
 		
+		a.fileOpen();
 		// 로그인 후 화면
 		
 		// up JPanel
@@ -88,7 +94,7 @@ public class LoginAfterPage extends JPanel{
 		jl1.setPreferredSize(new Dimension(1000, 60));
 		
 		// leftPanel JLabel ID 
-		JLabel info = new JLabel("ID : " + mfr.getLoginID);
+		JLabel info = new JLabel("ID : " + mfr.getLoginID /*list.get(mfr.getValue).getUserId()*/);
 		leftPanel.add(info);
 		info.setFont(new Font("고딕", Font.BOLD, 30));
 		info.setForeground(Color.white);
@@ -109,36 +115,14 @@ public class LoginAfterPage extends JPanel{
 		Calendar cal2 = Calendar.getInstance();
 		cal2.setTimeInMillis(System.currentTimeMillis() + 1000 * 60 * 6);
 		
-		// Timer
-		Timer timer = new Timer();
-		
-		TimerTask task = new TimerTask() {
-
-			@Override
-			public void run() {
-				System.out.println("Task is complete :)");
-			}			
-		};
-		Calendar date = Calendar.getInstance();
-		date.set(Calendar.YEAR,2020);
-		date.set(Calendar.MONTH,Calendar.JUNE);
-		date.set(Calendar.DAY_OF_MONTH,20);
-		date.set(Calendar.HOUR_OF_DAY,0);
-		date.set(Calendar.MINUTE,0);
-		date.set(Calendar.SECOND,0);
-		date.set(Calendar.MILLISECOND,0);
-		
-		timer.schedule(task, date.getTime());
-		
-				
+						
 		// leftPanel JLabel 남은시간
-		JLabel time = new JLabel("남은시간 : "/*cal.get(Calendar.MINUTE)*/);
+		JLabel time = new JLabel("남은시간 : " + mfr.getpaymentScreenNumber/*cal.get(Calendar.MINUTE)*/);
 		leftPanel.add(time);
 		time.setFont(new Font("고딕", Font.BOLD, 60));
 		time.setForeground(Color.white);
 		time.setPreferredSize(new Dimension(800, 160));
-		
-		
+			
 		
 		// 현재 시간
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -150,10 +134,41 @@ public class LoginAfterPage extends JPanel{
 		starttime.setFont(new Font("고딕", Font.BOLD, 30));
 		starttime.setForeground(Color.white);
 		starttime.setPreferredSize(new Dimension(800, 80));
+			
+		// 
+		int elapsedTime = 0;
+		int seconds = 0;
+		int minutes = 0;
+		int hours = 0;
+		boolean started = false;
+		String seconds_string = String.format("%02d", seconds);
+		String minutes_string = String.format("%02d", minutes);
+		String hours_string = String.format("%02d", hours);
+		
+		// 사용시간 출력하기
+		JLabel timeLabel = new JLabel();
+		leftPanel.add(timeLabel);
+		time.setPreferredSize(new Dimension(800, 160));
+		
+		timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
+		
+		JButton timeButton = new JButton();
+		timeButton.add(timeLabel);
 				
+		/*Timer timer2 = new Timer();
+		
+		elapsedTime = elapsedTime + 1000;
+		hours = (elapsedTime/3600000);
+		minutes = (elapsedTime/60000) % 60;
+		seconds =(elapsedTime/1000) % 60;
+		seconds_string = String.format("%02d", seconds);
+		minutes_string = String.format("%02d", minutes);
+		hours_string = String.format("%02d", hours);
+		*/
+		
 		
 		// leftPanel JLabel 사용시간
-		JLabel usagetime = new JLabel("사용시간 : " + cal2.get(Calendar.MINUTE));
+		JLabel usagetime = new JLabel("사용시간 : " + timeLabel.getText());
 		leftPanel.add(usagetime);
 		usagetime.setFont(new Font("고딕", Font.BOLD, 30));
 		usagetime.setForeground(Color.white);
@@ -171,7 +186,7 @@ public class LoginAfterPage extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "사용을 종료 합니다", "사용 종료", JOptionPane.PLAIN_MESSAGE);
-				ChangePanel.changePanel(mfr, loginafterpage, new Login(mf));
+				ChangePanel.changePanel(mfr, loginafterpage, new MainPage(mf));
 			}
 		});
 				
@@ -210,6 +225,12 @@ public class LoginAfterPage extends JPanel{
 	}
 	
 	public void Time() {
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 		
