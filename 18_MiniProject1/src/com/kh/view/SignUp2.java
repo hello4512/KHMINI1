@@ -285,16 +285,24 @@ public class SignUp2 extends JPanel{
 		finish.setSize(380, 50);
 		this.add(finish);
 		
+		// 취소 버튼
+		JButton back = new JButton("취소");
+		back.setFont(new Font("맑은 고딕", Font.BOLD, 17));
+		back.setBackground(new Color(221, 221, 221));
+		back.setBorderPainted(false);
+		back.setFocusPainted(false);
+		back.setLocation(440, 600);
+		back.setSize(380, 50);
+		this.add(back);
+		
 		// 완료 버튼 클릭이벤트
-		// 1. 입력 창에 모두 입력 + 아이디, 비밀번호, 폰번호 조건 일치하면 데이터 입력 후 로그인 화면으로 돌아감
-		// 2. 아이디, 폰번호 중복이거나 비밀번호 불일치하면 재 확인 팝업
-		// 3. 아이디, 비밀번호, 폰번호 셋 중 하나라도 확인버튼 누르지 않았을 경우 재 확인 팝업
-		// 4. 입력 창에 모두 입력되지 않았을 경우 재 확인 팝업
+		// 1. 입력 창에 모두 입력 + 아이디, 비밀번호, 폰번호 조건 일치하면 데이터 입력 및 저장 후 로그인 화면으로 돌아감
+		// 2. 아이디, 비밀번호, 폰번호 셋 중 하나라도 중복/불일치 하거나 확인버튼 누르지 않았을 경우 재 확인 팝업
+		// 3. 입력 창에 정보가 모두 입력되지 않았을 경우 재 확인 팝업
 		finish.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(!inputId.getText().equals("") && !inputName.getText().equals("") && !inputPw.getText().equals("") && !inputPw2.getText().equals("")
-						&& !inputBirth.getText().equals("") && (male.isSelected() || female.isSelected()) && !inputNum.getText().equals("") && !inputEmail.getText().equals("")
+				if(!inputId.getText().equals("") && !inputName.getText().equals("") && !inputPw.getText().equals("") && !inputPw2.getText().equals("") && !inputBirth.getText().equals("") && (male.isSelected() || female.isSelected()) && !inputNum.getText().equals("") && !inputEmail.getText().equals("")
 						&& duplId.getText().equals("사용 가능한 아이디입니다.") && samePw.getText().equals("비밀번호가 일치합니다.") && duplNum.getText().equals("사용 가능한 번호입니다.")) {
 					// 입력 정보 PcMember에 입력, dat파일에 저장
 					int setBirth = Integer.parseInt(inputBirth.getText());
@@ -305,29 +313,17 @@ public class SignUp2 extends JPanel{
 					// 로그인 화면으로 돌아가기
 					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, signUp2, new Login(mf));
-				} else if(duplId.getText().equals("이미 등록된 아이디입니다.")) {
+				} else if(duplId.getText().equals("이미 등록된 아이디입니다.") || duplId.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "아이디를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
-				} else if(samePw.getText().equals("비밀번호가 일치하지 않습니다.")) {
+				} else if(samePw.getText().equals("비밀번호가 일치하지 않습니다.") || samePw.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "비밀번호를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
-				} else if(duplNum.getText().equals("이미 등록된 번호입니다.")) {
+				} else if(duplNum.getText().equals("이미 등록된 번호입니다.") || duplNum.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "핸드폰 번호를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
-				} else if(duplId.getText().equals("") || samePw.getText().equals("") || duplNum.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "아이디, 비밀번호, 핸드폰 번호를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 				} else {
 					JOptionPane.showMessageDialog(null, "모두 입력되었는지 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});
-		
-		// 취소 버튼
-		JButton back = new JButton("취소");
-		back.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		back.setBackground(new Color(221, 221, 221));
-		back.setBorderPainted(false);
-		back.setFocusPainted(false);
-		back.setLocation(440, 600);
-		back.setSize(380, 50);
-		this.add(back);
 		
 		// 취소 버튼 클릭이벤트 -> 회원가입 동의 화면으로 돌아감
 		back.addMouseListener(new MouseAdapter() {
