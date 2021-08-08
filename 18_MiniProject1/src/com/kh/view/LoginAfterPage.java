@@ -154,7 +154,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		
 		JButton timeButton = new JButton();
 		timeButton.add(timeLabel);
-				
+			
 		/*Timer timer2 = new Timer();
 		
 		elapsedTime = elapsedTime + 1000;
