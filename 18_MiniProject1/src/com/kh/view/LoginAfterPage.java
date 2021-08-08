@@ -40,7 +40,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		
 		Login lo = new Login(mf);
 		PcMember pm = new PcMember();
-		Seat2 se = new Seat2(mf);
+		Seat se = new Seat(mf);
 		
 		a.fileOpen();
 		// 로그인 후 화면
@@ -77,7 +77,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "자리이동 페이지로 이동합니다", "자리 이동", JOptionPane.PLAIN_MESSAGE);
-				ChangePanel.changePanel(mfr, loginafterpage, new Seat2(mf));
+				ChangePanel.changePanel(mfr, loginafterpage, new Seat(mf));
 			}
 		});
 				
@@ -94,7 +94,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		jl1.setPreferredSize(new Dimension(1000, 60));
 		
 		// leftPanel JLabel ID 
-		JLabel info = new JLabel("ID : " + mfr.getLoginID /*list.get(mfr.getValue).getUserId()*/);
+		JLabel info = new JLabel("ID : " + list.get(mfr.getValue).getUserId());
 		leftPanel.add(info);
 		info.setFont(new Font("고딕", Font.BOLD, 30));
 		info.setForeground(Color.white);

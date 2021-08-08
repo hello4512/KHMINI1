@@ -271,6 +271,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/1000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -282,6 +283,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/900원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -293,6 +295,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/1200원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -324,6 +327,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/3000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -334,6 +338,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/2400원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -344,6 +349,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/3300원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -377,6 +383,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/4000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -387,6 +394,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/3500원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -397,6 +405,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/5000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -427,6 +436,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/10000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -437,6 +447,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/8000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -447,6 +458,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/12000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -479,6 +491,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("20시간/15000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 1200;
 			}
 		});
 		
@@ -490,6 +503,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("20시간/12000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 1200;
 			}
 		});
 		
