@@ -94,6 +94,16 @@ public class SignUp extends JPanel{
 		next.setSize(380, 50);
 		this.add(next);
 		
+		// 이전 화면 버튼
+		JButton prev = new JButton("이전 화면으로");
+		prev.setFont(new Font("맑은 고딕", Font.BOLD, 17));
+		prev.setBackground(new Color(221, 221, 221));
+		prev.setBorderPainted(false);
+		prev.setFocusPainted(false);
+		prev.setLocation(440, 600);
+		prev.setSize(380, 50);
+		this.add(prev);
+		
 		// 다음 단계 버튼 이벤트 -> 체크박스 모두 체크하면 회원가입 창으로
 		next.addMouseListener(new MouseAdapter() {
 			@Override
@@ -105,16 +115,6 @@ public class SignUp extends JPanel{
 				}
 			}
 		});
-		
-		// 이전 화면 버튼
-		JButton prev = new JButton("이전 화면으로");
-		prev.setFont(new Font("맑은 고딕", Font.BOLD, 17));
-		prev.setBackground(new Color(221, 221, 221));
-		prev.setBorderPainted(false);
-		prev.setFocusPainted(false);
-		prev.setLocation(440, 600);
-		prev.setSize(380, 50);
-		this.add(prev);
 		
 		// 이전 화면 버튼 이벤트 -> 로그인 화면으로
 		prev.addMouseListener(new MouseAdapter() {

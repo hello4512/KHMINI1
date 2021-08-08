@@ -3,6 +3,12 @@ package com.kh.view;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
+	public static int SeatNumber;				// 좌석 번호
+	public static String getLoginID;			// 로그인 한 아이디값
+	public static int getValue;					// 로그인 된 벨류값
+	public static int getpaymentScreenNumber; 	// 선결제 금액당 시간값
+	public static String menu;					// 메뉴
+	public static int menunum;					// 메뉴 개수
 	
 	public MainFrame() {
 		super("PC방 프로그램");
