@@ -35,6 +35,7 @@ public class CafePage extends JPanel {
 	private JPanel mainPage;
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
+	private String call;
 	
 	ImageIcon img = new ImageIcon("icon/back.png");
 	ImageIcon img1 = new ImageIcon("icon/reset.png");
@@ -885,7 +886,7 @@ public class CafePage extends JPanel {
 		JTextField call = new JTextField("요청사항은 50자 이내로 작성해주세요");
 		call.setLocation(860, 515); call.setSize(370, 30);
 		call.setFont(new Font("맑은 고딕", Font.PLAIN, 15 ));
-		
+	
 
 		call.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -893,6 +894,7 @@ public class CafePage extends JPanel {
 			}
 
 		});
+
 
 		JButton pay = new JButton("주문하기");
 		pay.setBackground(Color.yellow);
@@ -918,10 +920,23 @@ public class CafePage extends JPanel {
 					JOptionPane.showMessageDialog(null, "결제 수단을 선택해 주세요.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
 					
+	
 					
 			
 				}
 			}
+		});
+		
+		pay.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+					
+					call.add(call.getText(), null);
+					
+			
+				}
+			
 		});
 
 		this.add(name);

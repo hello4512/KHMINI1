@@ -25,7 +25,6 @@ import com.kh.common.ChangePanel;
 import com.kh.model.vo.Product;
 
 
-
 public class ManagerPage extends JPanel {
 	private MainFrame mfr;
 	private JPanel managerpage;
@@ -142,9 +141,10 @@ public class ManagerPage extends JPanel {
 		requests.setHorizontalAlignment(JLabel.LEFT);
 
 		// 개행용 JLabel
-		JLabel jl3 = new JLabel();
+		JTextField jl3 = new JTextField();
 		inPanel.add(jl3);
 		jl3.setPreferredSize(new Dimension(900, 100));
+		
 
 		/*// 개행용 JLabel
 		JLabel jl4 = new JLabel("1");
