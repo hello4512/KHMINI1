@@ -26,8 +26,7 @@ public class MemberDao {
 //			e.printStackTrace();
 			System.out.println("pcMember.dat 파일을 로드하지 못했습니다.");
 		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
-			System.out.println("ArrayList<PcMember>으로 캐스팅 할 수 없습니다.");
+			e.printStackTrace();
 		}
 		
 		return list;

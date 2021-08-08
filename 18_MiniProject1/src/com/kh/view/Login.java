@@ -41,7 +41,7 @@ public class Login extends JPanel{
 			
 		this.setLayout(null);
 		
-		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ "01" +"</p></html>";
+		String text = "<html><p style=\"color:white;font-size:40px;border-bottom:5px solid white;\">"+ mfr.SeatNumber +"</p></html>";
 		JLabel label = new JLabel(text);
 
 		String PName = "<html><p style=\"color:#E5C9F1;font-size:40px;\">"+ "MINI1 PC" +"</p></html>";
@@ -115,6 +115,8 @@ public class Login extends JPanel{
 		PwLabel.setLocation(0, 50);
 		NumLabel.setSize(100, 30);
 		NumLabel.setLocation(0, 90);
+		NumArea.setEnabled(false);
+		NumArea.setBackground(Color.DARK_GRAY);
 
 		IdArea.setSize(150, 30);
 		IdArea.setLocation(100, 10);
@@ -205,6 +207,12 @@ public class Login extends JPanel{
 		findArea.add(SearchResult);
 		dialog.add(findArea);
 		
+		NumArea.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent e) {
+		    	JOptionPane.showMessageDialog(null, "중국의 코로나로 인해 당분간\n비회원 사용을 금지합니다.", "MINI1 PC", JOptionPane.ERROR_MESSAGE);		    	
+		    }
+		});
+		
 		LoginBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -213,13 +221,15 @@ public class Login extends JPanel{
 		    		if(IdArea.getText().equals(list.get(i).getUserId()) &&
 		    		PwArea.getText().equals(list.get(i).getUserPw())) {
 		    			value = i;
+		    			mfr.getLoginID = list.get(value).getUserId();
 		    		}
 		    	}
-		    	System.out.println(PwArea.getText());
-		    	if(value >= 0) {
+		    	if(IdArea.getText().equals("admin1")) {
+		    		ChangePanel.changePanel(mfr, login, new ManagerPage(mf));
+				} else if(value >= 0) {
 		    		JOptionPane.showMessageDialog(null, "로그인 성공", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
-					//ChangePanel.changePanel(mfr, login, new (mf));
-		    	}else {
+					ChangePanel.changePanel(mfr, login, new LoginAfterPage(mf));
+		    	} else {
 		    		JOptionPane.showMessageDialog(null, "로그인 실패", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 		    	}
 			}			
