@@ -296,7 +296,7 @@ public class SignUp2 extends JPanel{
 				if(!inputId.getText().equals("") && !inputName.getText().equals("") && !inputPw.getText().equals("") && !inputPw2.getText().equals("")
 						&& !inputBirth.getText().equals("") && (male.isSelected() || female.isSelected()) && !inputNum.getText().equals("") && !inputEmail.getText().equals("")
 						&& duplId.getText().equals("사용 가능한 아이디입니다.") && samePw.getText().equals("비밀번호가 일치합니다.") && duplNum.getText().equals("사용 가능한 번호입니다.")) {
-					// 입력 정보 PcMember에 저장
+					// 입력 정보 PcMember에 입력, dat파일에 저장
 					int setBirth = Integer.parseInt(inputBirth.getText());
 					char setGender = 'M';
 					if(female.isSelected()) setGender = 'F';
@@ -306,7 +306,7 @@ public class SignUp2 extends JPanel{
 					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, signUp2, new Login(mf));
 				} else if(duplId.getText().equals("이미 등록된 아이디입니다.")) {
-					JOptionPane.showMessageDialog(null, "다른 아이디를 입력해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "아이디를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 				} else if(samePw.getText().equals("비밀번호가 일치하지 않습니다.")) {
 					JOptionPane.showMessageDialog(null, "비밀번호를 확인해 주세요.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 				} else if(duplNum.getText().equals("이미 등록된 번호입니다.")) {

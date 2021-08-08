@@ -3,14 +3,14 @@ package com.kh.model.vo;
 public class Product {
 	private String productName;
 	private int price;
-	
-	
+
 	public Product() {}
 	
 	public Product(String productName, int price) {
 		super();
 		this.productName = productName;
 		this.price = price;
+
 	}
 	public String getProductName() {
 		return productName;
@@ -24,6 +24,7 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	@Override
 	public String toString() {
 		return "Product [productName=" + productName + ", price=" + price + "]";

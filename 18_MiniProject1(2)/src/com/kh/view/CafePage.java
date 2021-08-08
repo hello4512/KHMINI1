@@ -26,6 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
+import com.kh.common.ChangePanel;
 import com.kh.model.vo.Product;
 
 public class CafePage extends JPanel {
@@ -35,8 +36,8 @@ public class CafePage extends JPanel {
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
 	
-	ImageIcon img = new ImageIcon("./image/back.png");
-	ImageIcon img1 = new ImageIcon("./image/reset.png");
+	ImageIcon img = new ImageIcon("icon/back.png");
+	ImageIcon img1 = new ImageIcon("icon/reset.png");
 
 	public CafePage(MainFrame mf) {
 		this.mfr = mf;
@@ -88,7 +89,7 @@ public class CafePage extends JPanel {
 		foodMenuM1.setBackground(Color.white);
 		foodMenuM1.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon1 = new ImageIcon("image/Swingchip.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon1 = new ImageIcon("icon/Swingchip.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label1 = new JLabel(new ImageIcon(icon1));
 		label1.setLocation(20, -10);
 		label1.setSize(120, 200);
@@ -125,7 +126,7 @@ public class CafePage extends JPanel {
 		foodMenuM2.setBackground(Color.white);
 		foodMenuM2.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon2 = new ImageIcon("image/꼬깔콘.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon2 = new ImageIcon("icon/꼬깔콘.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label2 = new JLabel(new ImageIcon(icon2));
 		label2.setLocation(20, -10);
 		label2.setSize(120, 200);
@@ -162,7 +163,7 @@ public class CafePage extends JPanel {
 		foodMenuM3.setBackground(Color.white);
 		foodMenuM3.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon3 = new ImageIcon("image/꾸이맨.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon3 = new ImageIcon("icon/꾸이맨.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label3 = new JLabel(new ImageIcon(icon3));
 		label3.setLocation(20, -10);
 		label3.setSize(120, 200);
@@ -200,7 +201,7 @@ public class CafePage extends JPanel {
 		foodMenuM4.setBackground(Color.white);
 		foodMenuM4.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon4 = new ImageIcon("image/꿀꽈배기.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon4 = new ImageIcon("icon/꿀꽈배기.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label4 = new JLabel(new ImageIcon(icon4));
 		label4.setLocation(20, -10);
 		label4.setSize(120, 200);
@@ -237,7 +238,7 @@ public class CafePage extends JPanel {
 		foodMenuM5.setBackground(Color.white);
 		foodMenuM5.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon5 = new ImageIcon("image/숏다리.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon5 = new ImageIcon("icon/숏다리.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label5 = new JLabel(new ImageIcon(icon5));
 		label5.setLocation(20, -10);
 		label5.setSize(120, 200);
@@ -274,7 +275,7 @@ public class CafePage extends JPanel {
 		foodMenuM6.setBackground(Color.white);
 		foodMenuM6.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon6 = new ImageIcon("image/야채타임.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon6 = new ImageIcon("icon/야채타임.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label6 = new JLabel(new ImageIcon(icon6));
 		label6.setLocation(20, -10);
 		label6.setSize(120, 200);
@@ -311,7 +312,7 @@ public class CafePage extends JPanel {
 		foodMenuM7.setBackground(Color.white);
 		foodMenuM7.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon7 = new ImageIcon("image/자유시간.png").getImage().getScaledInstance(150, 100, 0);
+		Image icon7 = new ImageIcon("icon/자유시간.png").getImage().getScaledInstance(150, 100, 0);
 		JLabel label7 = new JLabel(new ImageIcon(icon7));
 		label7.setLocation(20, 30);
 		label7.setSize(120, 100);
@@ -348,7 +349,7 @@ public class CafePage extends JPanel {
 		foodMenuM8.setBackground(Color.white);
 		foodMenuM8.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon8 = new ImageIcon("image/초코송이.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon8 = new ImageIcon("icon/초코송이.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label8 = new JLabel(new ImageIcon(icon8));
 		label8.setLocation(20, -10);
 		label8.setSize(120, 200);
@@ -385,7 +386,7 @@ public class CafePage extends JPanel {
 		foodMenuM9.setBackground(Color.white);
 		foodMenuM9.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon9 = new ImageIcon("image/칸초.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon9 = new ImageIcon("icon/칸초.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label9 = new JLabel(new ImageIcon(icon9));
 		label9.setLocation(20, -10);
 		label9.setSize(120, 200);
@@ -422,7 +423,7 @@ public class CafePage extends JPanel {
 		foodMenuM10.setBackground(Color.white);
 		foodMenuM10.setLayout(null);
 		// 이미지 크기 지정하여 이미지 객체 생성
-		Image icon10 = new ImageIcon("image/홈런볼.png").getImage().getScaledInstance(150, 150, 0);
+		Image icon10 = new ImageIcon("icon/홈런볼.png").getImage().getScaledInstance(150, 150, 0);
 		JLabel label10 = new JLabel(new ImageIcon(icon10));
 		label10.setLocation(20, -10);
 		label10.setSize(120, 200);
@@ -496,6 +497,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button1.setEnabled(false);
 				text.setText("스윙칩이 선택되었습니다.");
+				mfr.menu = "스윙칩";
+				mfr.menunum = 1;
 			}
 		});
 		button2.addActionListener(new ActionListener() {
@@ -523,6 +526,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button2.setEnabled(false);
 				text.setText("꼬깔콘이 선택되었습니다.");
+				mfr.menu = "꼬깔콘";
+				mfr.menunum = 1;
 			}
 		});
 
@@ -551,6 +556,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button3.setEnabled(false);
 				text.setText("꾸이맨이 선택되었습니다.");
+				mfr.menu = "꾸이맨";
+				mfr.menunum = 1;
 			}
 		});
 
@@ -579,6 +586,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button4.setEnabled(false);
 				text.setText("꿀꽈배기가 선택되었습니다.");
+				mfr.menu = "꿀꽈배기";
+				mfr.menunum = 1;
 			}
 		});
 		button5.addActionListener(new ActionListener() {
@@ -606,6 +615,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button5.setEnabled(false);
 				text.setText("숏다리가 선택되었습니다.");
+				mfr.menu = "숏다리";
+				mfr.menunum = 1;
 			}
 		});
 		button6.addActionListener(new ActionListener() {
@@ -633,6 +644,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button6.setEnabled(false);
 				text.setText("야채타임이 선택되었습니다.");
+				mfr.menu = "야채타임";
+				mfr.menunum = 1;
 			}
 		});
 		button7.addActionListener(new ActionListener() {
@@ -660,6 +673,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button7.setEnabled(false);
 				text.setText("자유시간이 선택되었습니다.");
+				mfr.menu = "자유시간";
+				mfr.menunum = 1;
 			}
 
 		});
@@ -688,6 +703,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button8.setEnabled(false);
 				text.setText("초코송이가 선택되었습니다.");
+				mfr.menu = "초코송이";
+				mfr.menunum = 1;
 			}
 		});
 		button9.addActionListener(new ActionListener() {
@@ -715,6 +732,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button9.setEnabled(false);
 				text.setText("칸초가 선택되었습니다.");
+				mfr.menu = "칸초";
+				mfr.menunum = 1;
 			}
 		});
 		button10.addActionListener(new ActionListener() {
@@ -742,15 +761,17 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button10.setEnabled(false);
 				text.setText("홈런볼이 선택되었습니다.");
+				mfr.menu = "홈런볼";
+				mfr.menunum = 1;
 			}
 		});
 		
-		 JButton back = new JButton();	
-		 back.setLocation(710, 30);
-		 back.setSize(60, 50);
-		 back.setIcon(img);
-		 back.setBackground(Color.white);
-		 back.setBorderPainted(false);
+//		 JButton back = new JButton();	
+//		 back.setLocation(710, 30);
+//		 back.setSize(60, 50);
+//		 back.setIcon(img);
+//		 back.setBackground(Color.white);
+//		 back.setBorderPainted(false);
 		
 
 		JLabel orderB1 = new JLabel("      총 결제금액 : ");
@@ -864,7 +885,7 @@ public class CafePage extends JPanel {
 		JTextField call = new JTextField("요청사항은 50자 이내로 작성해주세요");
 		call.setLocation(860, 515); call.setSize(370, 30);
 		call.setFont(new Font("맑은 고딕", Font.PLAIN, 15 ));
-		
+	
 
 		call.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -872,6 +893,7 @@ public class CafePage extends JPanel {
 			}
 
 		});
+
 
 		JButton pay = new JButton("주문하기");
 		pay.setBackground(Color.yellow);
@@ -885,19 +907,35 @@ public class CafePage extends JPanel {
 				
 				if (billCash.isSelected()) {
 					JOptionPane.showMessageDialog(null, "현금으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else if (billCard.isSelected()) {
 					JOptionPane.showMessageDialog(null, "카드으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else if (billKakao.isSelected()){
 					JOptionPane.showMessageDialog(null, "카카오페이으로 주문이 완료 되었습니다.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else {
 					JOptionPane.showMessageDialog(null, "결제 수단을 선택해 주세요.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
 					
+	
 					
 			
 				}
 			}
+		});
+		
+		pay.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+					
+					call.add(call.getText(), null);
+					
+			
+				}
+			
 		});
 
 		this.add(name);
@@ -912,7 +950,7 @@ public class CafePage extends JPanel {
 		this.add(foodMenuM8);
 		this.add(foodMenuM9);
 		this.add(foodMenuM10);
-		this.add(back);
+//		this.add(back);
 		this.add(reset);
 		// mf.add(order);
 		this.add(orderT);
@@ -930,5 +968,4 @@ public class CafePage extends JPanel {
 		mf.add(this);
 		
 	}
-	
 }

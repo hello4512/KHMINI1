@@ -40,30 +40,45 @@ public class PaymentScreen extends JPanel{
 		// 자리선택 버튼
 		JButton seatbtn = new JButton("자리선택");
 		seatbtn.setFocusPainted(false);
-		seatbtn.setPreferredSize(new Dimension(180, 80));
-		seatbtn.setBackground(Color.gray);
+		seatbtn.setPreferredSize(new Dimension(160, 80));
+		seatbtn.setBackground(new Color(212, 244, 250));
 		seatbtn.setFont(new Font("고딕", Font.BOLD, 30));
 
 		// 총 시간 및 금액 라벨 
-		JLabel lb = new JLabel("결제 종류");
+		JLabel lb = new JLabel("시간 및 금액");
 		lb.setHorizontalAlignment(JLabel.CENTER); //라벨 글자 가운데 정렬
-		lb.setPreferredSize(new Dimension(180, 50));
+		lb.setPreferredSize(new Dimension(160, 50));
 		lb.setOpaque(true);
 		lb.setBackground(Color.yellow);
 		lb.setFont(new Font("고딕", Font.BOLD, 21));
 		
-		// 총 시간 + 금액 계산해서 올릴 라벨
+		// 클릭한 총 시간 및 금액 뜨는 라벨 
 		JLabel  tlabel = new JLabel();
 		tlabel.setBackground(Color.white);
 		tlabel.setOpaque(true);
 		//JTextArea ta = new JTextArea(8,16); 
-		tlabel.setPreferredSize(new Dimension(180,130));
+		tlabel.setPreferredSize(new Dimension(150,70));
+		
+		JLabel label = new JLabel("결제수단");
+		label.setHorizontalAlignment(JLabel.CENTER); 
+		label.setPreferredSize(new Dimension(160, 50));
+		label.setOpaque(true);
+		label.setBackground(Color.yellow);
+		label.setFont(new Font("고딕", Font.BOLD, 25));
+		
+		// 클릭한 결제 수단 뜨는 라벨 
+		JLabel  tlabel2 = new JLabel();
+		tlabel2.setBackground(Color.white);
+		tlabel2.setOpaque(true);
+		//JTextArea ta = new JTextArea(8,16); 
+		tlabel2.setPreferredSize(new Dimension(150,70));
+		
 		
 		// 결제하기 버튼
 		JButton paymentbtn = new JButton("결제하기");
 		paymentbtn.setFocusPainted(false);
-		paymentbtn.setPreferredSize(new Dimension(180, 50));
-		paymentbtn.setBackground(Color.red);
+		paymentbtn.setPreferredSize(new Dimension(160, 50));
+		paymentbtn.setBackground(new Color(255,167,167));
 		paymentbtn.setFont(new Font("고딕", Font.BOLD, 30));
 		
 		// 왼쪽 패널 (그리드레이아웃 올릴 패널)
@@ -79,10 +94,11 @@ public class PaymentScreen extends JPanel{
 		rightPanel.add(seatbtn);  
 		rightPanel.add(lb);   // 금액 라벨
 		rightPanel.add(tlabel);
+		rightPanel.add(label);
+		rightPanel.add(tlabel2);
 		rightPanel.add(paymentbtn); 
 		
 		// 전체 패널
-	
 		this.add(leftPanel); 
 		this.add(rightPanel);  
  
@@ -91,35 +107,35 @@ public class PaymentScreen extends JPanel{
 		JLabel lb1 = new JLabel("회원요금");
 		lb1.setFont(lb1.getFont().deriveFont(25.0f));
 		lb1.setHorizontalAlignment(JLabel.CENTER);
-		lb1.setBackground(Color.blue);
+		lb1.setBackground(new Color(232,217,255));
 		lb1.setOpaque(true);
 		leftPanel.add(lb1);
 
 		JLabel lb2 = new JLabel("학생요금");
 		lb2.setFont(lb2.getFont().deriveFont(25.0f));
 		lb2.setHorizontalAlignment(JLabel.CENTER);
-		lb2.setBackground(Color.blue);
+		lb2.setBackground(new Color(232,217,255));
 		lb2.setOpaque(true);
 		leftPanel.add(lb2);
 
 		JLabel lb3 = new JLabel("비회원요금");
 		lb3.setFont(lb3.getFont().deriveFont(25.0f));
 		lb3.setHorizontalAlignment(JLabel.CENTER);
-		lb3.setBackground(Color.blue);
+		lb3.setBackground(new Color(232,217,255));
 		lb3.setOpaque(true);
 		leftPanel.add(lb3);
 
 		JLabel lb4 = new JLabel("상품권");
 		lb4.setFont(lb4.getFont().deriveFont(25.0f));
 		lb4.setHorizontalAlignment(JLabel.CENTER);
-		lb4.setBackground(Color.blue);
+		lb4.setBackground(new Color(232,217,255));
 		lb4.setOpaque(true);
 		leftPanel.add(lb4);
 
 		JLabel lb5 = new JLabel("결제수단");
 		lb5.setFont(lb5.getFont().deriveFont(25.0f));
 		lb5.setHorizontalAlignment(JLabel.CENTER);
-		lb5.setBackground(Color.blue);
+		lb5.setBackground(new Color(232,217,255));
 		lb5.setOpaque(true);
 		leftPanel.add(lb5);
 
@@ -255,6 +271,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/1000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -266,6 +283,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/900원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -277,6 +295,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("1시간/1200원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 60;
 			}
 		});
 		
@@ -285,9 +304,9 @@ public class PaymentScreen extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 	
-				tlabel.setText("문화상품권");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("문화상품권");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -295,9 +314,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("카드");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("카드");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(25.0f));
 			}
 		});
 		
@@ -308,6 +327,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/3000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -318,6 +338,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/2400원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -328,6 +349,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("3시간/3300원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 180;
 			}
 		});
 		
@@ -337,9 +359,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("넥슨캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("넥슨캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -348,9 +370,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("현금");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("현금");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(25.0f));
 			}
 		});
 		
@@ -361,6 +383,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/4000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -371,6 +394,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/3500원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -381,6 +405,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("5시간/5000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 300;
 			}
 		});
 		
@@ -388,9 +413,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("온캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("온캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -398,9 +423,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("카카오페이");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("카카오페이");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(25.0f));
 			}
 		});
 		
@@ -411,6 +436,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/10000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -421,6 +447,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/8000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -431,6 +458,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("12시간/12000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 720;
 			}
 		});
 		
@@ -438,9 +466,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("틴캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("틴캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -449,9 +477,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("삼성페이");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("삼성페이");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(25.0f));
 			}
 		});
 		
@@ -463,6 +491,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("20시간/15000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 1200;
 			}
 		});
 		
@@ -474,6 +503,7 @@ public class PaymentScreen extends JPanel{
 				tlabel.setText("20시간/12000원");
 				tlabel.setHorizontalAlignment(JLabel.CENTER);
 				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				mfr.getpaymentScreenNumber = 1200;
 			}
 		});
 		
@@ -482,9 +512,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("구글기프트");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("구글기프트");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -494,9 +524,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("토스");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("토스");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
