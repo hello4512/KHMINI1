@@ -906,14 +906,14 @@ public class CafePage extends JPanel {
 				
 				if (billCash.isSelected()) {
 					JOptionPane.showMessageDialog(null, "현금으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else if (billCard.isSelected()) {
 					JOptionPane.showMessageDialog(null, "카드로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else if (billKakao.isSelected()){
 					JOptionPane.showMessageDialog(null, "카카오페이로 주문이 완료 되었습니다.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
+					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
 				} else {
 					JOptionPane.showMessageDialog(null, "결제 수단을 선택해 주세요.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);

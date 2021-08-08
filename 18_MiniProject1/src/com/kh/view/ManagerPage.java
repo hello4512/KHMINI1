@@ -93,7 +93,7 @@ public class ManagerPage extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "요청완료", "요청완료", JOptionPane.PLAIN_MESSAGE);
-				ChangePanel.changePanel(mfr, managerpage, new LoginAfterPage(mf));
+				ChangePanel.changePanel(mfr, managerpage, new Login(mf));
 			}
 		});
 
