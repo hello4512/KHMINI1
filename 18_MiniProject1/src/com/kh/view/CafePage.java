@@ -35,7 +35,6 @@ public class CafePage extends JPanel {
 	private JPanel mainPage;
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
-	private String call;
 	
 	ImageIcon img = new ImageIcon("icon/back.png");
 	ImageIcon img1 = new ImageIcon("icon/reset.png");
