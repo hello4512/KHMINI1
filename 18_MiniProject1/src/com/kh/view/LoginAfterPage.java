@@ -117,7 +117,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		
 						
 		// leftPanel JLabel 남은시간
-		JLabel time = new JLabel("남은시간 : " + mfr.getpaymentScreenNumber/*cal.get(Calendar.MINUTE)*/);
+		JLabel time = new JLabel("남은시간 : " + mfr.getpaymentScreenNumber + "분"/*cal.get(Calendar.MINUTE)*/);
 		leftPanel.add(time);
 		time.setFont(new Font("고딕", Font.BOLD, 60));
 		time.setForeground(Color.white);

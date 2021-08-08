@@ -304,9 +304,9 @@ public class PaymentScreen extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 	
-				tlabel.setText("문화상품권");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("문화상품권");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -359,9 +359,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("넥슨캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("넥슨캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -413,9 +413,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("온캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("온캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -466,9 +466,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("틴캐시");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("틴캐시");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		
@@ -512,9 +512,9 @@ public class PaymentScreen extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				tlabel.setText("구글기프트");
-				tlabel.setHorizontalAlignment(JLabel.CENTER);
-				tlabel.setFont(tlabel.getFont().deriveFont(20.0f));
+				tlabel2.setText("구글기프트");
+				tlabel2.setHorizontalAlignment(JLabel.CENTER);
+				tlabel2.setFont(tlabel.getFont().deriveFont(20.0f));
 			}
 		});
 		

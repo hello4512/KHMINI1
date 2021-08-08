@@ -145,9 +145,19 @@ public class MainPage extends JPanel{
 		btn.setForeground(new Color(70, 24, 90));
 		btn.setBackground(Color.white);
 		btn.setFocusPainted(false);
-		btn.setLocation(860, 570);
+		btn.setLocation(820, 570);
 		btn.setSize(150, 70);
 		this.add(btn);
+		
+		// 관리자 확인버튼
+		JButton btn2 = new JButton("관리자");
+		btn2.setFont(new Font("맑은 고딕", Font.BOLD, 22));
+		btn2.setForeground(new Color(70, 24, 90));
+		btn2.setBackground(new Color(126, 125, 125));
+		btn2.setFocusPainted(false);
+		btn2.setLocation(1020, 570);
+		btn2.setSize(150, 70);
+		this.add(btn2);
 		
 		// 확인 버튼 이벤트 -> 질문 N/N/Y일 때 선불결제 화면으로 전환, 입장조건 안 될 경우 화면 안 넘어감
 		btn.addMouseListener(new MouseAdapter() {
@@ -159,6 +169,14 @@ public class MainPage extends JPanel{
 					JOptionPane.showMessageDialog(null, "방역수칙에 위반되거나 개인정보 수집에 동의하지 않아 이용하실 수 없습니다.", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 				}
 					
+			}
+		});
+		
+		// 관리자 확인 버튼 이벤트 -> 바로 로그인 화면으로 전환
+		btn2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ChangePanel.changePanel(mfr, mainPage, new Login(mf));
 			}
 		});
 		
