@@ -224,10 +224,12 @@ public class Login extends JPanel{
 		    			mfr.getLoginID = list.get(value).getUserId();
 		    		}
 		    	}
-		    	if(value >= 0) {
+		    	if(IdArea.getText().equals("admin1")) {
+		    		ChangePanel.changePanel(mfr, login, new ManagerPage(mf));
+				} else if(value >= 0) {
 		    		JOptionPane.showMessageDialog(null, "로그인 성공", "MINI1 PC", JOptionPane.PLAIN_MESSAGE);
 					ChangePanel.changePanel(mfr, login, new LoginAfterPage(mf));
-		    	}else {
+		    	} else {
 		    		JOptionPane.showMessageDialog(null, "로그인 실패", "MINI1 PC", JOptionPane.WARNING_MESSAGE);
 		    	}
 			}			
