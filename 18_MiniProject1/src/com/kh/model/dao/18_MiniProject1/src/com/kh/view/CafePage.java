@@ -497,6 +497,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button1.setEnabled(false);
 				text.setText("스윙칩이 선택되었습니다.");
+				mfr.menu = "스윙칩";
+				mfr.menunum = 1;
 			}
 		});
 		button2.addActionListener(new ActionListener() {
@@ -524,6 +526,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button2.setEnabled(false);
 				text.setText("꼬깔콘이 선택되었습니다.");
+				mfr.menu = "꼬깔콘";
+				mfr.menunum = 1;
 			}
 		});
 
@@ -552,6 +556,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button3.setEnabled(false);
 				text.setText("꾸이맨이 선택되었습니다.");
+				mfr.menu = "꾸이맨";
+				mfr.menunum = 1;
 			}
 		});
 
@@ -580,6 +586,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button4.setEnabled(false);
 				text.setText("꿀꽈배기가 선택되었습니다.");
+				mfr.menu = "꿀꽈배기";
+				mfr.menunum = 1;
 			}
 		});
 		button5.addActionListener(new ActionListener() {
@@ -607,6 +615,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button5.setEnabled(false);
 				text.setText("숏다리가 선택되었습니다.");
+				mfr.menu = "숏다리";
+				mfr.menunum = 1;
 			}
 		});
 		button6.addActionListener(new ActionListener() {
@@ -634,6 +644,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button6.setEnabled(false);
 				text.setText("야채타임이 선택되었습니다.");
+				mfr.menu = "야채타임";
+				mfr.menunum = 1;
 			}
 		});
 		button7.addActionListener(new ActionListener() {
@@ -661,6 +673,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button7.setEnabled(false);
 				text.setText("자유시간이 선택되었습니다.");
+				mfr.menu = "자유시간";
+				mfr.menunum = 1;
 			}
 
 		});
@@ -689,6 +703,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button8.setEnabled(false);
 				text.setText("초코송이가 선택되었습니다.");
+				mfr.menu = "초코송이";
+				mfr.menunum = 1;
 			}
 		});
 		button9.addActionListener(new ActionListener() {
@@ -716,6 +732,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button9.setEnabled(false);
 				text.setText("칸초가 선택되었습니다.");
+				mfr.menu = "칸초";
+				mfr.menunum = 1;
 			}
 		});
 		button10.addActionListener(new ActionListener() {
@@ -743,6 +761,8 @@ public class CafePage extends JPanel {
 				orderM.repaint();
 				button10.setEnabled(false);
 				text.setText("홈런볼이 선택되었습니다.");
+				mfr.menu = "홈런볼";
+				mfr.menunum = 1;
 			}
 		});
 		
@@ -886,19 +906,14 @@ public class CafePage extends JPanel {
 				
 				if (billCash.isSelected()) {
 					JOptionPane.showMessageDialog(null, "현금으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
-				} else if (billCard.isSelected()) {
-
-					JOptionPane.showMessageDialog(null, "카드으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
 					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
-
+				} else if (billCard.isSelected()) {
 					JOptionPane.showMessageDialog(null, "카드로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
-
+					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
 				} else if (billKakao.isSelected()){
-					JOptionPane.showMessageDialog(null, "카카오페이으로 주문이 완료 되었습니다.", "주문",
+					JOptionPane.showMessageDialog(null, "카카오페이로 주문이 완료 되었습니다.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
-					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
+					ChangePanel.changePanel(mfr, mainPage, new ManagerPage(mf));
 				} else {
 					JOptionPane.showMessageDialog(null, "결제 수단을 선택해 주세요.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
@@ -937,5 +952,6 @@ public class CafePage extends JPanel {
 		this.add(pay);
 
 		mf.add(this);
+		
 	}
 }
