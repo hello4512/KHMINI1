@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.kh.common.ChangePanel;
+import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.Product;
+import com.kh.model.vo.Requests;
 
 
 public class ManagerPage extends JPanel {
@@ -31,6 +32,8 @@ public class ManagerPage extends JPanel {
 	private Image img;
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
+	private ArrayList<Requests> list2 = new ArrayList<>();
+	private MemberDao a = new MemberDao();
 
 	public ManagerPage(MainFrame mf) {
 		this.mfr = mf;
@@ -140,8 +143,8 @@ public class ManagerPage extends JPanel {
 		requests.setFont(new Font("고딕", Font.BOLD, 50));
 		requests.setHorizontalAlignment(JLabel.LEFT);
 
-		// 개행용 JLabel
-		JTextField jl3 = new JTextField();
+		// 요청사항 TextField
+		JTextField jl3 = new JTextField(mfr.call/*CafePage 요청사항 들어갈곳*/);
 		inPanel.add(jl3);
 		jl3.setPreferredSize(new Dimension(900, 100));
 		

@@ -11,9 +11,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.ButtonGroup;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,10 +24,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.border.Border;
 
 import com.kh.common.ChangePanel;
+import com.kh.model.dao.MemberDao;
 import com.kh.model.vo.Product;
+import com.kh.model.vo.Requests;
 
 public class CafePage extends JPanel {
 	protected static final Component scroller = null;
@@ -35,6 +36,8 @@ public class CafePage extends JPanel {
 	private JPanel mainPage;
 	private List<JSpinner> splist = new ArrayList<>();
 	private List<Product> selectedProduct = new ArrayList<>();
+	private ArrayList<Requests> list2 = new ArrayList<>();
+	private MemberDao a = new MemberDao();
 	
 	ImageIcon img = new ImageIcon("icon/back.png");
 	ImageIcon img1 = new ImageIcon("icon/reset.png");
@@ -44,7 +47,7 @@ public class CafePage extends JPanel {
 		this.mainPage = this;
 		this.setLayout(null);
 		this.setBackground(new Color(3,0,102));
-
+		
 		// 하단 정보 패널
 		JPanel infor = new JPanel();
 		JLabel text = new JLabel("선택된 제품이 없습니다.");
@@ -881,7 +884,9 @@ public class CafePage extends JPanel {
 		 * billKakao.setLocation(1120, 455);
 		 * billKakao.setSize(110, 50);
 		 */
-	
+		
+		Scanner sc = new Scanner(System.in);
+			
 		JTextField call = new JTextField("요청사항은 50자 이내로 작성해주세요");
 		call.setLocation(860, 515); call.setSize(370, 30);
 		call.setFont(new Font("맑은 고딕", Font.PLAIN, 15 ));
@@ -904,7 +909,13 @@ public class CafePage extends JPanel {
 		pay.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				int value = -1;
+		    	for(int i = 0; i < list2.size(); i++) {
+		    		if(call.getText().equals(list2.get(i).getRequests())) {
+		    			value = i;
+		    			mfr.call = list2.get(value).getRequests();
+		    		}	
+		    	}
 				if (billCash.isSelected()) {
 					JOptionPane.showMessageDialog(null, "현금으로 주문이 완료 되었습니다.", "주문", JOptionPane.INFORMATION_MESSAGE);
 					ChangePanel.changePanel(mfr, mainPage, new LoginAfterPage(mf));
@@ -918,20 +929,24 @@ public class CafePage extends JPanel {
 				} else {
 					JOptionPane.showMessageDialog(null, "결제 수단을 선택해 주세요.", "주문",
 							JOptionPane.INFORMATION_MESSAGE);
-					
-	
-					
-			
+				
 				}
 			}
 		});
 		
+		/*String list2str = sc.nextLine();
+		list2 = a.fileOpen2();
+		list2.add(new Requests(list2str + ""));
+		a.fileSave2(list2);
+		System.out.println("리스트 확인");
+		System.out.println(list2);
+		*/
 		pay.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 
 					
-					call.add(call.getText(), null);
+			//		call.add(call.getText(), null);
 					
 			
 				}

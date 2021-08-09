@@ -1,8 +1,5 @@
 package com.kh.view;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -14,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,7 +28,16 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 	private Image img;
 	private MemberDao a = new MemberDao();
 	private ArrayList<PcMember> list = new ArrayList<>();
-		
+	
+	private String one;
+	private String two;
+	private String b;
+	private int m = -1;
+	private int h, s;
+	
+	private JLabel aa = new JLabel();
+	private JLabel aa2 = new JLabel();
+	
 	public LoginAfterPage(MainFrame mf) {
 		list = a.fileOpen();
 		this.mfr = mf;
@@ -43,6 +48,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		Seat2 se = new Seat2(mf);
 		
 		a.fileOpen();
+				
 		// 로그인 후 화면
 		
 		// up JPanel
@@ -51,7 +57,7 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		upPanel.setBackground(Color.darkGray);
 			
 		// JLabel "no."
-		JLabel nojl = new JLabel("no. "+ mfr.SeatNumber);	//	좌석 번호 가져오기
+		JLabel nojl = new JLabel("no. " + mfr.SeatNumber);	//	좌석 번호 가져오기
 		upPanel.add(nojl);
 		nojl.setFont(new Font("고딕", Font.BOLD, 30));
 		nojl.setForeground(Color.white);
@@ -165,14 +171,25 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 		minutes_string = String.format("%02d", minutes);
 		hours_string = String.format("%02d", hours);
 		*/
-		
-		
+		// JLabel aa = new JLabel();
+		// JLabel aa2 = new JLabel();
+				
 		// leftPanel JLabel 사용시간
-		JLabel usagetime = new JLabel("사용시간 : " + timeLabel.getText());
+		JLabel usagetime = new JLabel("사용시간 : " + aa2/*timeLabel.getText()*/);
 		leftPanel.add(usagetime);
+		leftPanel.add(aa2);
 		usagetime.setFont(new Font("고딕", Font.BOLD, 30));
 		usagetime.setForeground(Color.white);
 		usagetime.setPreferredSize(new Dimension(800, 80));
+		
+		// 시계
+		/*JLabel clock = new JLabel("시계");
+		leftPanel.add(clock);
+		leftPanel.add(aa2);
+		clock.setFont(new Font("고딕", Font.BOLD, 30));
+		clock.setForeground(Color.white);
+		clock.setPreferredSize(new Dimension(800, 80));
+		*/
 				
 		// JButton "사용 종료"
 		JButton exit = new JButton("사용 종료");
@@ -218,16 +235,79 @@ public class LoginAfterPage extends JPanel implements ActionListener{
 			}
 		});
 		
-		
+	
+				
 		this.add(leftPanel);
 		this.add(rightPanel);
 		mf.add(this);
 	}
 	
-	public void Time() {
-		
+	public void timeget() {
+		String sday=null;
+		Calendar t = Calendar.getInstance();
+		int year = t.get(Calendar.YEAR); 
+		int month = t.get(Calendar.MONTH)+1;
+		int date = t.get(Calendar.DATE);
+		int amPm = t.get(Calendar.AM_PM);
+		int hour = t.get(Calendar.HOUR);
+		int min = t.get(Calendar.MINUTE);
+		int sec = t.get(Calendar.SECOND);
+		String ampm=amPm==Calendar.AM? "오전":"오후";
+		int day= t.get(Calendar.DAY_OF_WEEK);
+		b = (year+"."+month+"."+date+"."+ampm+" "+hour+":"+min+":"+sec);
+		aa.setText(b);
+		add(aa);
+		while(true) {
+			Calendar t2=Calendar.getInstance();
+			int year2 = t2.get(Calendar.YEAR); 
+			int month2 = t2.get(Calendar.MONTH)+1;
+			int date2 = t2.get(Calendar.DATE);
+			int amPm2 = t2.get(Calendar.AM_PM);
+			int hour2 = t2.get(Calendar.HOUR);
+			int min2 = t2.get(Calendar.MINUTE);
+			int sec2 = t2.get(Calendar.SECOND);
+			String ampm2=amPm==Calendar.AM? "오전":"오후";
+			int day2= t.get(Calendar.DAY_OF_WEEK);
+			one = (year2+"."+month2+"."+date2+".");
+			two = (ampm2+" "+hour2+":"+min2+":"+sec2);
+			if(sec2<sec) {
+				sec2 += 60;
+			}
+			s = (sec2 -sec);
+			if(s == 0) {
+				m++;
+			}
+			if(m == 60) {
+				m = 0;
+				h++;
+			}
+			String h2 = h+"";
+			String m2 = m+"";
+			String s2 = s+"";
+					
+			aa2.setText(h2+":"+m2+":"+s2);
+			
+			add(aa2);
+			try {
+				Thread.sleep(1000);//1초
+				repaint();
+		    } catch(Exception e) {
+		    	
+		    }
+		}
 	}
-
+	
+	public void setlabel() {	
+		aa2.setOpaque(true);
+		aa2.setBackground(new Color(0,0,0,0));
+		aa2.setBounds(55,70,300,100);
+		aa2.setForeground(Color.red);
+		aa.setOpaque(true);
+		aa.setBackground(new Color(0,0,0,0));
+		aa.setBounds(85,170,300,150);
+		aa.setForeground(Color.black);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

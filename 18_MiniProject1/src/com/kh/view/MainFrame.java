@@ -9,6 +9,8 @@ public class MainFrame extends JFrame{
 	public static int getpaymentScreenNumber; 	// 선결제 금액당 시간값
 	public static String menu;					// 메뉴
 	public static int menunum;					// 메뉴 개수
+	public static String call;					// 요청사항 입력값
+	public static double timer;					// 사용시간
 	
 	public MainFrame() {
 		super("PC방 프로그램");
